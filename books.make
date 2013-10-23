@@ -26,8 +26,6 @@ projects[libraries][version] = "2.1"
 
 projects[link][version] = "1.1"
 
-projects[diff][version] = "3.x"
-
 projects[transliteration][version] = "3.x"
 
 projects[references][version] = "2.1"
@@ -43,6 +41,21 @@ projects[views_datasource][version] = "1.x-dev"
 projects[rubik][version] = "4.0-beta8"
 
 projects[tao][version] = "3.0-beta4"
+
+projects[pathauto][subdir] = "contrib"
+projects[pathauto][version] = "1.2"
+
+projects[token][subdir] = "contrib"
+projects[token][version] = "1.5"
+
+projects[unique_field][subdir] = "contrib"
+projects[unique_field][version] = "1.0-rc1"
+
+; While DEV
+projects[devel][subdir] = "contrib"
+projects[devel][version] = "1.3"
+
+projects[diff][version] = "3.x"
 
 ; Profile
 
@@ -86,19 +99,19 @@ projects[dlts_utilities][download][url] = "lib/modules/dlts_utilities"
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_books][download][type] = "local"
-projects[dlts_books][download][url] = "lib/modules/dlts_book/dlts_book_features"
+projects[dlts_books][download][url] = "lib/modules/dlts_book_features"
 projects[dlts_books][type] = "module"
 
 projects[dlts_book_pager][download][type] = "local"
-projects[dlts_book_pager][download][url] = "lib/modules/dlts_book/dlts_book_pager"
+projects[dlts_book_pager][download][url] = "lib/modules/dlts_book_pager"
 projects[dlts_book_pager][type] = "module"
 
 projects[dlts_book_api][download][type] = "local"
-projects[dlts_book_api][download][url] = "lib/modules/dlts_book/dlts_book_api"
+projects[dlts_book_api][download][url] = "lib/modules/dlts_book_api"
 projects[dlts_book_api][type] = "module"
 
 projects[dlts_book_display][download][type] = "local"
-projects[dlts_book_display][download][url] = "lib/modules/dlts_book/dlts_book_display"
+projects[dlts_book_display][download][url] = "lib/modules/dlts_book_display"
 projects[dlts_book_display][type] = "module"
 
 ; Themes
