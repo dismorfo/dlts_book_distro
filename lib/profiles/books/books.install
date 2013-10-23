@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Implement hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function books_install() {
+
+  include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
+
+  standard_install();
+
+  // Book, Page and Stitched Page to not be promoted.
+  variable_set('node_options_dlts_book', array('status'));
+  variable_set('node_options_dlts_book_page', array('status'));
+  variable_set('node_options_dlts_book_stitched_page', array('status'));
+
+  // Book, Page and Stitched Page to not have comments.
+  variable_set('comment_dlts_book', COMMENT_NODE_HIDDEN);
+  variable_set('comment_dlts_book_page', COMMENT_NODE_HIDDEN);
+  variable_set('comment_dlts_book_stitched_page', COMMENT_NODE_HIDDEN);
+
+  //Book, Page and Stitched Page to not have byline ('submitted by')
+  variable_set('node_submitted_dlts_book', FALSE);
+  variable_set('node_submitted_dlts_book_page', FALSE);
+  variable_set('node_submitted_dlts_book_stitched_page', FALSE);	
+  
+}
+
+function books_modules_installed($modules) {  
+  if ( module_exists('overlay') ) {      
+    module_disable( array('overlay') );
+  }  
+}
