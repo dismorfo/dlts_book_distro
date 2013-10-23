@@ -2,7 +2,9 @@
 
 .DS_Store
 .project
+.sass-cache
 settings.php
 project.conf
 builds
 lib/profiles/books/images
+lib/themes/dlts_book/css/*.css
