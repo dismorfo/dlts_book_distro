@@ -60,64 +60,64 @@ projects[diff][version] = "3.x"
 ; Profile
 
 projects[books][download][type] = "local"
-projects[books][download][url] = "lib/profiles/books"
+projects[books][download][source] = "lib/profiles/books"
 projects[books][type] = "profile"
 
 ; Modules
 
 projects[dlts_image][download][type] = "local"
-projects[dlts_image][download][url] = "lib/modules/dlts_image"
+projects[dlts_image][download][source] = "lib/modules/dlts_image"
 projects[dlts_image][type] = "module"
 projects[dlts_image][version] = "7.1-dev"
 
 projects[imageconvert][download][type] = "local"
-projects[imageconvert][download][url] = "lib/modules/imageconvert"
+projects[imageconvert][download][source] = "lib/modules/imageconvert"
 projects[imageconvert][type] = "module"
 
 projects[dlts_nodeapi][download][type] = "local"
-projects[dlts_nodeapi][download][url] = "lib/modules/dlts_nodeapi"
+projects[dlts_nodeapi][download][source] = "lib/modules/dlts_nodeapi"
 projects[dlts_nodeapi][type] = "module"
 
 projects[dlts_dmd_multiplier][download][type] = "local"
-projects[dlts_dmd_multiplier][download][url] = "lib/modules/dlts_dmd_multiplier"
+projects[dlts_dmd_multiplier][download][source] = "lib/modules/dlts_dmd_multiplier"
 projects[dlts_dmd_multiplier][type] = "module"
 
 projects[dlts_shapes][download][type] = "local"
-projects[dlts_shapes][download][url] = "lib/modules/dlts_shapes"
+projects[dlts_shapes][download][source] = "lib/modules/dlts_shapes"
 projects[dlts_shapes][type] = "module"
 
 projects[dlts_site_metadata][download][type] = "local"
-projects[dlts_site_metadata][download][url] = "lib/modules/dlts_site_metadata"
+projects[dlts_site_metadata][download][source] = "lib/modules/dlts_site_metadata"
 projects[dlts_site_metadata][type] = "module"
 
 projects[dlts_solr][download][type] = "local"
-projects[dlts_solr][download][url] = "lib/modules/dlts_solr"
+projects[dlts_solr][download][source] = "lib/modules/dlts_solr"
 projects[dlts_solr][type] = "module"
 
 projects[dlts_utilities][download][type] = "local"
-projects[dlts_utilities][download][url] = "lib/modules/dlts_utilities"
+projects[dlts_utilities][download][source] = "lib/modules/dlts_utilities"
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_books][download][type] = "local"
-projects[dlts_books][download][url] = "lib/modules/dlts_book_features"
+projects[dlts_books][download][source] = "lib/modules/dlts_book_features"
 projects[dlts_books][type] = "module"
 
 projects[dlts_book_pager][download][type] = "local"
-projects[dlts_book_pager][download][url] = "lib/modules/dlts_book_pager"
+projects[dlts_book_pager][download][source] = "lib/modules/dlts_book_pager"
 projects[dlts_book_pager][type] = "module"
 
 projects[dlts_book_api][download][type] = "local"
-projects[dlts_book_api][download][url] = "lib/modules/dlts_book_api"
+projects[dlts_book_api][download][source] = "lib/modules/dlts_book_api"
 projects[dlts_book_api][type] = "module"
 
 projects[dlts_book_display][download][type] = "local"
-projects[dlts_book_display][download][url] = "lib/modules/dlts_book_display"
+projects[dlts_book_display][download][source] = "lib/modules/dlts_book_display"
 projects[dlts_book_display][type] = "module"
 
 ; Themes
 
 projects[dlts_book][download][type] = "local"
-projects[dlts_book][download][url] = "lib/themes/dlts_book"
+projects[dlts_book][download][source] = "lib/themes/dlts_book"
 projects[dlts_book][type] = "theme"
 
 ; Libraries

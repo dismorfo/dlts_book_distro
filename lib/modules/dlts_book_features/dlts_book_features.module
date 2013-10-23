@@ -4,4 +4,4 @@
  * Code for the DLTS Books feature.
  */
 
-include_once('dlts_books_features.features.inc');
+include_once('dlts_book_features.features.inc');
