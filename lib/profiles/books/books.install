@@ -24,12 +24,247 @@ function books_install() {
   //Book, Page and Stitched Page to not have byline ('submitted by')
   variable_set('node_submitted_dlts_book', FALSE);
   variable_set('node_submitted_dlts_book_page', FALSE);
-  variable_set('node_submitted_dlts_book_stitched_page', FALSE);	
-  
+  variable_set('node_submitted_dlts_book_stitched_page', FALSE);
+
 }
 
-function books_modules_installed($modules) {  
-  if ( module_exists('overlay') ) {      
-    module_disable( array('overlay') );
-  }  
+function books_disable_themes() {
+  theme_disable(
+    array('bartik')
+  );
+}
+
+function books_disable_modules() {
+  if (module_exists('overlay')) {
+    module_disable( 
+      array('overlay') 
+    );
+  }
+}
+
+function books_add_content() {
+
+  $content = array(
+    'books' => array(
+	  0 => array(
+	    'title' => 'Romanticism',
+	    'identifier' => '',
+	    'authors' => array(
+		),
+	    'pages' => array(
+		  0 => array(
+		    'title' => 'The wanderer above the sea of fog',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/1/1c/Caspar_David_Friedrich_032_%28The_wanderer_above_the_sea_of_fog%29.jpg',
+		  ),
+		  1 => array(
+		    'title' => 'Death of Sardanapalus',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/2/2f/Delacroix_-_La_Mort_de_Sardanapale_%281827%29.jpg',
+		  ),
+		  2 => array(
+		    'title' => 'The Lady of Shalott',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/8/83/JWW_TheLadyOfShallot_1888.jpg',
+		  ),
+		  3 => array(
+		    'title' => 'The Course of Empire',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/0/0c/The_Course_of_Empire_The_Savage_State_Thomas_Cole_1836.jpeg',
+		  ),		  
+		  4 => array(
+		    'title' => 'The Voyage of Life Childhood',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/7/7b/Cole_Thomas_The_Voyage_of_Life_Childhood_1842.jpg',
+		  ),
+		  5 => array(
+		    'title' => 'The Poem of the Soul',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/6/6d/Le_poeme_de_lAme-14-Louis_Janmot-MBA_Lyon-IMG_0497.jpg',
+		  ),
+		  6 => array(
+		    'title' => 'Crusaders Thirsting near Jerusalem',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/c/c1/Hayez%2C_Fracesco_-_Crusaders_Thirsting_near_Jerusalem_-_1836-50.jpg',
+		  ),		  
+		  7 => array(
+		    'title' => 'The Forging of the Sampo',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/a/a8/Gallen_Kallela_The_Forging_of_the_Sampo.jpg',
+		  ),
+		  8 => array(
+		    'title' => 'The Forging of the Sampo',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/5/57/Wappers_-_Episodes_from_September_Days_1830_on_the_Place_de_l%E2%80%99H%C3%B4tel_de_Ville_in_Brussels.JPG',
+		  ),
+		  8 => array(
+		    'title' => 'Episodes from September Days 1830 on the Place de lHotel de Ville in Brussels',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/5/57/Wappers_-_Episodes_from_September_Days_1830_on_the_Place_de_l%E2%80%99H%C3%B4tel_de_Ville_in_Brussels.JPG',
+		  ),
+		  9 => array(
+		    'title' => 'The Nightmare',
+		    'image' => 'http://upload.wikimedia.org/wikipedia/commons/5/56/John_Henry_Fuseli_-_The_Nightmare.JPG',
+		  ),		  
+		),
+	  ),
+	),
+  );
+  
+  books_generate_book();
+
+}
+
+/** Return a plain node template */
+function books_setup_node($type) {
+  $node = new StdClass();
+  $node->type = $type;
+  $node->language = LANGUAGE_NONE;
+  $node->promote = 0;
+  $node->sticky = 0;
+  /** Fills in a few default values */
+  node_object_prepare($node);  
+  return $node;
+}
+
+/**
+ * Create a hubs.
+ */
+function books_generate_book() {
+
+  $node = new StdClass();
+	  
+  $nodeode->type = 'dlts_book';
+  
+  $node->language = LANGUAGE_NONE;
+  
+  $node->promote = 0;
+  
+  $node->sticky = 0;
+  
+  /** Fills in a few default values */
+  node_object_prepare($node);  
+    
+  /** Node title */
+  $node->title = 'Romanticism';
+
+  /** Node status */
+  $node->status = 1;
+        
+  /** Node comment */
+  $node->comment = 0;
+
+  /** Node author new id */
+  $node->uid = 1;
+	
+  $node->field_author[LANGUAGE_NONE] = array(
+    0 => array(
+      'value' => filter_xss('Caspar David Friedrich'),
+    ),
+    1 => array(
+      'value' => filter_xss('Eugne Delacroix'),
+    ),
+    2 => array(
+      'value' => filter_xss('Alfred, Lord Tennyson'),
+    ),
+    3 => array(
+      'value' => filter_xss('Louis Janmot'),
+    ),
+    4 => array(
+      'value' => filter_xss('Francesco Hayez'),
+    ),
+    5 => array(
+      'value' => filter_xss('Gallen-Kallela'),
+    ),
+    6 => array(
+      'value' => filter_xss('Egidius Karel Gustaaf Wappers'),
+    ),
+    7 => array(
+      'value' => filter_xss('Henry Fuseli'),
+    ),
+  );
+	
+  $node->field_binding_orientation[LANGUAGE_NONE][0]['value'] = 1;
+	
+  $node->field_call_number[LANGUAGE_NONE][0]['value'] = 1;
+	
+  $node->field_contributor[LANGUAGE_NONE] = array(
+    0 => array(
+      'value' => 'Alexander',
+    ),
+    1 => array(
+      'value' => 'Michael',
+    ),
+    2 => array(
+      'value' => 'Christopher',
+    )
+  );
+	
+  $node->field_creator[LANGUAGE_NONE] = array(
+    0 => array(
+      'value' => 'Isabella',
+    ),
+    1 => array(
+      'value' => 'Madison',
+    ),
+    2 => array(
+      'value' => 'Emma',
+    )
+  );
+  
+  $node->field_description[LANGUAGE_NONE][0]['value'] = filter_xss("
+    Romanticism (also the Romantic era or the Romantic period) was an artistic, literary, and intellectual 
+    movement that originated in Europe toward the end of the 18th century and in most areas was at its peak
+    in the approximate period from 1800 to 1850. Partly a reaction to the Industrial Revolution, it was 
+    also a revolt against aristocratic social and political norms of the Age of Enlightenment and a reaction 
+    against the scientific rationalization of nature.It was embodied most strongly in the visual arts, 
+    music, and literature, but had a major impact on historiography, education and the natural sciences.
+    Its effect on politics was considerable and complex; while for much of the peak Romantic period it
+    was associated with liberalism and radicalism, in the long term its effect on the growth of nationalism 
+    was probably more significant.
+  ");
+  
+  $node->field_dimensions[LANGUAGE_NONE][0]['value'] = '24cm x 3cm';
+  
+  $node->field_editor[LANGUAGE_NONE] = array(
+    0 => array(
+      'value' => 'Isabella',
+    ),
+    1 => array(
+      'value' => 'Michael',
+    ),
+    2 => array(
+      'value' => 'Emma',
+    )
+  );
+  
+  $node->field_handle[LANGUAGE_NONE][0] = array(
+    'title' => 'Permanent link',
+    'url' => 'http://example.com',
+  );
+
+  $node->field_identifier[LANGUAGE_NONE][0]['value'] = 'romanticism';
+  
+  $node->field_read_order[LANGUAGE_NONE][0]['value'] = 0;
+  
+  $node->field_scan_order[LANGUAGE_NONE][0]['value'] = 0;
+
+  /** Prepare node for saving */
+  if ($node = node_submit($node)) {
+    node_save($node);
+  }
+	
+}
+
+function books_profile_install_tasks() {
+
+  $tasks = array();
+  
+  $tasks['books_task_disable_themes'] = array(
+    'display_name' => st('Disable Themes'),
+    'function' => 'books_disable_themes',
+  );
+  
+  $tasks['books_task_disable_modules'] = array(
+    'display_name' => st('Disable modules'),
+    'function' => 'books_disable_modules',
+  );
+
+  $tasks['books_task_load_content'] = array(
+    'display_name' => st('Add dummy Content'),
+    'function' => 'books_add_content',
+  );
+
+  return $tasks;
+
 }

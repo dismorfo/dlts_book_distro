@@ -58,4 +58,8 @@ for dir in $LIBRARY/profiles/*
     ln -s $LIBRARY/profiles/${base} $BUILD_DIR/$BUILD_NAME/profiles/${base}
 done
 
+echo Generating CSS files using compass
+
+compass compile --force  $LIBRARY/themes/dlts_book
+
 echo Ok

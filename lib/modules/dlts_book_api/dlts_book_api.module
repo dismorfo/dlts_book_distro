@@ -13,6 +13,10 @@ function dlts_book_api_custom_theme() {
   }
 }
 
+function dlts_book_api_node_update($node) {
+  dpm($node);
+}
+
 function dlts_book_api_permission() {
   return array(
     'request oembed' => array(
