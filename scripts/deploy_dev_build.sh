@@ -60,6 +60,6 @@ done
 
 echo Generating CSS files using compass
 
-compass compile --force  $LIBRARY/themes/dlts_book
+compass compile --force $LIBRARY/themes/dlts_book
 
 echo Ok
