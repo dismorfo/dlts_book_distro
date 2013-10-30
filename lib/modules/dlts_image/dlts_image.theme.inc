@@ -60,13 +60,18 @@ function theme_dlts_image_hires($variables) {
 }
 
 function theme_dlts_image_thumbnail($variables) {
+  	
+  dpm(__FUNCTION__);
+  
   $item = $variables['item'];
 
   if (is_null($item) || empty($item['uri'])) {
     watchdog('dlts_image', 'Error while returning thumbnail image.', array(), WATCHDOG_WARNING);
     return '';
   }
+  
   $thumb_path = dlts_image_file_path( $item, 'dlts-book-image', FALSE );
+  
   return '<img src="' . file_create_url( $thumb_path ) . '" title="' . check_plain($item['filename']) . '"  alt="' . t('Image preview') . '" />';
 }
 

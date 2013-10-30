@@ -44,6 +44,10 @@ function books_disable_modules() {
 
 function books_add_content() {
 
+  print (__FUNCTION__);	
+  
+  books_generate_book();
+  
   $content = array(
     'books' => array(
 	  0 => array(
@@ -101,26 +105,14 @@ function books_add_content() {
 	),
   );
   
-  books_generate_book();
-
-}
-
-/** Return a plain node template */
-function books_setup_node($type) {
-  $node = new StdClass();
-  $node->type = $type;
-  $node->language = LANGUAGE_NONE;
-  $node->promote = 0;
-  $node->sticky = 0;
-  /** Fills in a few default values */
-  node_object_prepare($node);  
-  return $node;
 }
 
 /**
  * Create a hubs.
  */
 function books_generate_book() {
+
+  print (__FUNCTION__);
 
   $node = new StdClass();
 	  
@@ -248,8 +240,11 @@ function books_generate_book() {
 
 function books_profile_install_tasks() {
 
-  $tasks = array();
-  
+  $tasks['books_task_load_content'] = array(
+    'display_name' => st('Add dummy Content'),
+    'function' => 'books_add_content',
+  );
+
   $tasks['books_task_disable_themes'] = array(
     'display_name' => st('Disable Themes'),
     'function' => 'books_disable_themes',
@@ -258,11 +253,6 @@ function books_profile_install_tasks() {
   $tasks['books_task_disable_modules'] = array(
     'display_name' => st('Disable modules'),
     'function' => 'books_disable_modules',
-  );
-
-  $tasks['books_task_load_content'] = array(
-    'display_name' => st('Add dummy Content'),
-    'function' => 'books_add_content',
   );
 
   return $tasks;

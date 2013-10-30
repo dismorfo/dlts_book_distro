@@ -131,6 +131,7 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
       $variables['width'] = $element['#value']['width'];
       $variables['height'] = $element['#value']['width'];
     }
+
     /**
      * Call Djakota Image Server
      */ 
@@ -177,7 +178,7 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
       '#type' => 'hidden',
       '#value' => $variables['djakota_height'],
     );
-    
+
     $element['djakota_levels'] = array(
       '#type' => 'hidden',
       '#value' => $variables['djakota_levels'],
@@ -192,12 +193,7 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
       '#type' => 'hidden',
       '#value' => $variables['djakota_compositingLayerCount'],
     );
-    
-    $element['preview'] = array(
-      '#type' => 'markup',
-      '#markup' => theme('image_style', $variables),
-    );
-        
+
   }
   return $element;
 }
@@ -212,7 +208,7 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
       'field types' => array('dlts_image'),
       'settings' => array(
         'progress_indicator' => 'throbber',
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'none',
       ),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_CUSTOM,
@@ -239,6 +235,7 @@ function dlts_image_field_formatter_info() {
       'field types' => array('dlts_image'),
       'description' => t('Displays image files in their original size.'),
     ),
+    /**
     'dlts_image_thumbnail' => array(
       'label' => t('DLTS Thumbnail Image'),
       'field types' => array('dlts_image'),
@@ -249,6 +246,7 @@ function dlts_image_field_formatter_info() {
       'field types' => array('dlts_image'),
       'description' => t('Displays image files in their thumbnail size.'),
     ),
+	*/
   );
 }
 
@@ -256,21 +254,18 @@ function dlts_image_field_formatter_info() {
  * Implments hook_field_formatter_view().
  */
 function dlts_image_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+
   $element = array();
-  switch ($display['type']) {
-    case 'dlts_image_hires':
-      foreach ($items as $delta => $item) {
+  
+  if ($display['type'] == 'dlts_image_hires') {
+    foreach ($items as $delta => $item) {
         $element[$delta] = array(
           '#theme' => 'dlts_image_hires',
           '#file' => $item,
         );
-      }
-      break;
-    
-    default:
-      // something went wrong
-      break;
+    }  	
   }
+  
   return $element;
 }
 

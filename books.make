@@ -127,7 +127,12 @@ libraries[Mobile_Detect][download][url] = "https://github.com/serbanghita/Mobile
 libraries[Mobile_Detect][directory_name] = "Mobile_Detect"
 libraries[Mobile_Detect][type] = "library"
 
-;libraries[openlayers][download][type] = ""
-;libraries[openlayers][download][url] = ""
-;libraries[openlayers][directory_name] = "openlayers"
-;libraries[openlayers][type] = "library"
+libraries[openlayers][download][type] = "git"
+libraries[openlayers][download][url] = "https://github.com/openlayers/openlayers.git"
+libraries[openlayers][directory_name] = "openlayers"
+libraries[openlayers][type] = "library"
+
+libraries[openlayers][download][type] = "get"
+libraries[openlayers][download][url] = "http://softlayer-dal.dl.sourceforge.net/project/djatoka/djatoka/1.1/adore-djatoka-1.1.tar.gz"
+libraries[openlayers][directory_name] = "adore-djatoka"
+libraries[openlayers][type] = "library"
