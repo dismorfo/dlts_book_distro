@@ -164,10 +164,6 @@ projects[dlts_image][download][source] = "lib/modules/dlts_image"
 projects[dlts_image][type] = "module"
 projects[dlts_image][version] = "7.1-dev"
 
-projects[imageconvert][download][type] = "local"
-projects[imageconvert][download][source] = "lib/modules/imageconvert"
-projects[imageconvert][type] = "module"
-
 projects[dlts_nodeapi][download][type] = "local"
 projects[dlts_nodeapi][download][source] = "lib/modules/dlts_nodeapi"
 projects[dlts_nodeapi][type] = "module"
