@@ -58,8 +58,26 @@ for dir in $LIBRARY/profiles/*
     ln -s $LIBRARY/profiles/${base} $BUILD_DIR/$BUILD_NAME/profiles/${base}
 done
 
-echo Generating CSS files using compass
+echo Building OpenLayers
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/books.cfg $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build/books.cfg
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTS.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/DLTS.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSZoomIn.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSZoomIn.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSZoomOut.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSZoomOut.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSZoomPanel.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSZoomPanel.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSZoomOutPanel.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSZoomOutPanel.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSZoomInPanel.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSZoomInPanel.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSScrollWheel.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSScrollWheel.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSMouseWheel.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Handler/DLTSMouseWheel.js
+cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/OpenURL.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Layer/OpenURL.js
 
+cd $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build
+./build.py -c none books.cfg
+
+echo Generating CSS files using compass
 compass compile --force $LIBRARY/themes/dlts_book
+
+cd $DIR
+
+echo Build path: $BUILD_DIR/$BUILD_NAME
 
 echo Ok
