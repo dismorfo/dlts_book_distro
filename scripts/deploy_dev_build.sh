@@ -58,7 +58,14 @@ for dir in $LIBRARY/profiles/*
     ln -s $LIBRARY/profiles/${base} $BUILD_DIR/$BUILD_NAME/profiles/${base}
 done
 
+# Test for imagemagick
+imagemagick_convert_path=`which convert`
+
+# Set $imagemagick_convert_path as imagemagick convert path
+drush vset imagemagick_convert $imagemagick_convert_path
+
 echo Building OpenLayers
+
 cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/books.cfg $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build/books.cfg
 cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTS.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/DLTS.js
 cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSZoomIn.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Control/DLTSZoomIn.js
@@ -71,7 +78,13 @@ cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/DLTSMouseWh
 cp $BUILD_DIR/$BUILD_NAME/sites/all/modules/dlts_image/js/openlayers/OpenURL.js $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/lib/OpenLayers/Layer/OpenURL.js
 
 cd $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build
+
 ./build.py -c none books.cfg
+
+if [ -f $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build/OpenLayers.js ]
+then
+  drush vset dlts_image_openlayers_source sites/all/libraries/openlayers/build/OpenLayers.js
+fi
 
 echo Generating CSS files using compass
 compass compile --force $LIBRARY/themes/dlts_book

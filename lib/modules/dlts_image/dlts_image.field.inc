@@ -155,9 +155,7 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
       }
     }
     
-    /**
-     * Store the metadata in the form
-     */
+    /** Store the metadata in the form */
     
     $element['width'] = array(
       '#type' => 'hidden',
@@ -235,28 +233,14 @@ function dlts_image_field_formatter_info() {
       'field types' => array('dlts_image'),
       'description' => t('Displays image files in their original size.'),
     ),
-    /**
-    'dlts_image_thumbnail' => array(
-      'label' => t('DLTS Thumbnail Image'),
-      'field types' => array('dlts_image'),
-      'description' => t('Displays image files in their thumbnail size.'),
-    ),
-    'dlts_image_thumbnail_nodelink' => array(
-      'label' => t('DLTS Thumbnail Image linked to node'),
-      'field types' => array('dlts_image'),
-      'description' => t('Displays image files in their thumbnail size.'),
-    ),
-	*/
   );
 }
 
-/**
- * Implments hook_field_formatter_view().
+/** 
+ * Implements hook_field_formatter_view(). 
  */
 function dlts_image_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-
   $element = array();
-  
   if ($display['type'] == 'dlts_image_hires') {
     foreach ($items as $delta => $item) {
         $element[$delta] = array(
@@ -265,7 +249,6 @@ function dlts_image_field_formatter_view($entity_type, $entity, $field, $instanc
         );
     }  	
   }
-  
   return $element;
 }
 
