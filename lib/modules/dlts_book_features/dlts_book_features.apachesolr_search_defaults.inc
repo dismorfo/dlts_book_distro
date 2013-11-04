@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.apachesolr_search_defaults.inc
+ * dlts_book_features.apachesolr_search_defaults.inc
  */
 
 /**

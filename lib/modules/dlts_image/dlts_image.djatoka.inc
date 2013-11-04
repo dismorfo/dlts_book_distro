@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * Djatoka request
  * TODO: Think about the best way to make djatoka a small module and a class-like Apache Solr php client
@@ -19,11 +18,7 @@ function dlts_image_djatoka_request($file) {
 	
     $response = drupal_http_request($request);
 	
-    error_log($request);
-  
-    error_log(print_r($response));
-    
-    if ($response->code == '200' && isset($response->data) ) {
+    if ($response->code == '200' && isset($response->data)) {
       return drupal_json_decode($response->data);
     }
 

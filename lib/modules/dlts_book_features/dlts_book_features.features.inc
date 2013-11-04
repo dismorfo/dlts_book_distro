@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.features.inc
+ * dlts_book_features.features.inc
  */
 
 /**
@@ -31,64 +31,6 @@ function dlts_book_features_ctools_plugin_api() {
  */
 function dlts_book_features_views_api() {
   return array("version" => "3.0");
-}
-
-/**
- * Implements hook_image_default_styles().
- */
-function dlts_book_features_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: dlts-admin-thumbnail.
-  $styles['dlts-admin-thumbnail'] = array(
-    'name' => 'dlts-admin-thumbnail',
-    'effects' => array(
-      6 => NULL,
-      5 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 100,
-          'height' => 100,
-          'upscale' => 1,
-        ),
-        'weight' => -9,
-      ),
-    ),
-    'label' => 'dlts-admin-thumbnail',
-  );
-
-  // Exported image style: dlts-book-image.
-  $styles['dlts-book-image'] = array(
-    'name' => 'dlts-book-image',
-    'effects' => array(
-      1 => NULL,
-      2 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 200,
-          'upscale' => 0,
-        ),
-        'weight' => -9,
-      ),
-    ),
-    'label' => 'dlts-book-image',
-  );
-
-  return $styles;
 }
 
 /**

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.features.filter.inc
+ * dlts_book_features.features.filter.inc
  */
 
 /**

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.features.user_role.inc
+ * dlts_book_features.features.user_role.inc
  */
 
 /**

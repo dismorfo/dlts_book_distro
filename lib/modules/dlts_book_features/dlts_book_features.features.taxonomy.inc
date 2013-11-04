@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.features.taxonomy.inc
+ * dlts_book_features.features.taxonomy.inc
  */
 
 /**

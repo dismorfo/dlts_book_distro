@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.features.user_permission.inc
+ * dlts_book_features.features.user_permission.inc
  */
 
 /**
@@ -367,6 +367,15 @@ function dlts_book_features_user_default_permissions() {
       1 => 'collection curator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: administer pathauto.
+  $permissions['administer pathauto'] = array(
+    'name' => 'administer pathauto',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'pathauto',
   );
 
   // Exported permission: administer permissions.
@@ -910,6 +919,15 @@ function dlts_book_features_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'features',
+  );
+
+  // Exported permission: notify of path changes.
+  $permissions['notify of path changes'] = array(
+    'name' => 'notify of path changes',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'pathauto',
   );
 
   // Exported permission: perform unlimited index queries.

@@ -6,7 +6,7 @@ projects[drupal][version] = "7.x"
 
 projects[views_bulk_operations][version] = "3.1"
 
-projects[apachesolr][version] = "1.4"
+projects[apachesolr][version] = "1.5"
 
 projects[ctools][version] = "1.3"
 
@@ -50,6 +50,10 @@ projects[token][version] = "1.5"
 
 projects[unique_field][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
+
+; while in dev
+projects[node_export][version] = "3.0"
+projects[node_export][subdir] = "contrib"
 
 ; While DEV
 projects[devel][subdir] = "contrib"

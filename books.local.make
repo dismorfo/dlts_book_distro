@@ -3,6 +3,9 @@ core = 7.x
 api = 2
 
 projects[drupal][version] = "7.x"
+projects[drupal][download][type] = "local"
+projects[drupal][download][source] = "/Users/albertoortizflores/tools/projects/drupal/core/drupal-7.23"
+projects[drupal][type] = "core"
 
 projects[views_bulk_operations][download][type] = "local"
 projects[views_bulk_operations][subdir] = "contrib"
@@ -135,6 +138,18 @@ projects[devel][subdir] = "contrib"
 projects[devel][download][type] = "local"
 projects[devel][download][source] = "/Users/albertoortizflores/tools/projects/drupal/modules/7/contrib/devel"
 
+projects[node_export][type] = "module"
+projects[node_export][version] = "3.0"
+projects[node_export][subdir] = "contrib"
+projects[node_export][download][type] = "local"
+projects[node_export][download][source] = "/Users/albertoortizflores/tools/projects/drupal/modules/7/contrib/node_export"
+
+projects[uuid][type] = "module"
+projects[uuid][version] = "1.0-alpha5"
+projects[uuid][subdir] = "contrib"
+projects[uuid][download][type] = "local"
+projects[uuid][download][source] = "/Users/albertoortizflores/tools/projects/drupal/modules/7/contrib/uuid"
+
 projects[diff][type] = "module"
 projects[diff][version] = "3.x"
 projects[diff][subdir] = "contrib"
@@ -203,6 +218,10 @@ projects[dlts_book_api][type] = "module"
 projects[dlts_book_display][download][type] = "local"
 projects[dlts_book_display][download][source] = "lib/modules/dlts_book_display"
 projects[dlts_book_display][type] = "module"
+
+projects[dummy_book][download][type] = "local"
+projects[dummy_book][download][source] = "lib/modules/dummy_book"
+projects[dummy_book][type] = "module"
 
 ; Themes
 

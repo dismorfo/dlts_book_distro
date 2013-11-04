@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.apachesolr_environments.inc
+ * dlts_book_features.apachesolr_environments.inc
  */
 
 /**
@@ -21,8 +21,7 @@ function dlts_book_features_apachesolr_environments() {
   );
   $environment->index_bundles = array(
     'node' => array(
-      0 => 'collection',
-      1 => 'dlts_book_stitched_page',
+      0 => 'dlts_book_stitched_page',
     ),
   );
   $export['solr'] = $environment;

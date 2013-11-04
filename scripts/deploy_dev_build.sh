@@ -62,7 +62,7 @@ done
 imagemagick_convert_path=`which convert`
 
 # Set $imagemagick_convert_path as imagemagick convert path
-drush vset imagemagick_convert $imagemagick_convert_path
+drush -r $BUILD_DIR/$BUILD_NAME vset imagemagick_convert $imagemagick_convert_path
 
 echo Building OpenLayers
 
@@ -81,13 +81,17 @@ cd $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build
 
 ./build.py -c none books.cfg
 
+cd $DIR
+
 if [ -f $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build/OpenLayers.js ]
 then
-  drush vset dlts_image_openlayers_source sites/all/libraries/openlayers/build/OpenLayers.js
+  drush -r $BUILD_DIR/$BUILD_NAME vset dlts_image_openlayers_source sites/all/libraries/openlayers/build/OpenLayers.js
 fi
 
 echo Generating CSS files using compass
 compass compile --force $LIBRARY/themes/dlts_book
+
+drush -r $BUILD_DIR/$BUILD_NAME scr $DIR/dummy_book/import_dummy_book.php
 
 cd $DIR
 
