@@ -9,4 +9,4 @@ dependencies[] = image
 configure = admin/config/media/dlts-image
 
 core = 7.x
-version = "7.2-dev"
+version = "7.2.1-dev"
