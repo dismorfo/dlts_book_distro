@@ -89,7 +89,6 @@
     <?php if (isset($page['highlighted'])) : ?>
       <div id="highlighted"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
-    
     <?php if ($title): ?>
       <div id="titlebar" class="titlebar yui3-g">
         <div class="yui3-u-5-24 title">
@@ -106,13 +105,11 @@
       <div class="tabs"><?php print render($tabs); ?></div>
     <?php endif; ?>
   </div>
-
   <div class="yui-g search-results-header">
     <div class="yui3-1">
       <h2><?php print t('Results');?></h2>
     </div>
   </div>
-    
   <?php if (!empty($messages) || !empty($page['help']) || !empty($action_links)) : ?>
     <div class="yui-g">
       <div class="yui3-1">
@@ -122,10 +119,7 @@
       </div>
     </div>
   <?php endif; ?>
-      
-  
   <div class="yui3-g search-results-content">
-  
     <?php if (isset($page['left'])) : ?>
       <div class="yui3-u left">
         <?php print render($page['left']); ?>
@@ -135,11 +129,9 @@
       <?php print render($page['content']); ?>
     </div>    
   </div>
-  
   <?php if ($feed_icons) : ?>
     <?php print $feed_icons; ?> 
   <?php endif; ?>
-  
   <?php if ( isset($footer)) : ?>
     <div class="footer yui3-g">
       <div class="yui3-u-1">
@@ -149,5 +141,4 @@
       </div>
     </div>
   <?php endif; ?> 
-  
 </div>

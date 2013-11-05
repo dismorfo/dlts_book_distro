@@ -8,7 +8,7 @@
   <?php print $script; ?>  
 </head>
 <body id="pane-body" class="pane-body" <?php print $attributes;?>>
-  <div id="skip-link"><a href="#main-content" id="skip-to-main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a></div>
+  <div id="skip-link"><a href="#page" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a></div>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>

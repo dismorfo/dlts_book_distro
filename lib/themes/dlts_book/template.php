@@ -203,7 +203,7 @@ function dlts_book_preprocess_page(&$vars) {
  * See: http://api.drupal.org/api/drupal/modules%21node%21node.module/function/template_preprocess_node/7
  */
 function dlts_book_preprocess_node(&$vars) {
-
+	
   /** Include utilities files */
   module_load_include('inc', 'dlts_utilities', 'inc/dlts_utilities.book');
 
@@ -278,6 +278,33 @@ function dlts_book_preprocess_node(&$vars) {
       
       /** Load book */
       $book = dlts_utilities_book_page_load_book($node);
+	  
+	  if (
+	    !isset($vars['field_cropped_master']) || 
+	    (isset($vars['field_cropped_master']) && empty($vars['field_cropped_master']) )
+	  ) {
+	  	
+        $vars['field_cropped_master'] = array( array(
+            'fid' => 3,
+            'djakota_width' => 5684,
+            'djakota_height' => 4226,
+            'djakota_levels' => 6,
+            'djakota_dwtLevels' => 0, 
+            'djakota_compositingLayerCount' => 0, 
+            'width' => 5684,
+            'height' => 4226,
+            'uid' => 1,
+            'filename' => 'fighting.tif',
+            'uri' => 'public://fighting.tif',
+            'filemime' => 'image/tiff',
+            'filesize' => 72086840,
+            'status' => 0,
+            'timestamp' => 1383597646,
+            'uuid' => 'ca361ff7-6645-4a50-a416-ed8ba6a5eee1',
+            'rdf_mapping' => array(),
+          )
+		);
+      }
       
       /** Book sequence count */
       $vars['sequence_count'] = $sequence_count = dlts_utilities_book_get_sequence_count($book);
@@ -408,6 +435,9 @@ function dlts_book_dlts_shapes_ocr_coordinates_openlayers_js($variables) {
 }
 
 function dlts_book_dlts_image_hires($variables) {
+  
+  dd($variables);
+  
   $file = $variables['file'];
   $module_path = drupal_get_path('module', 'dlts_image');
   $fid = 'id-'. $file['fid'];
@@ -896,7 +926,7 @@ function dlts_book_process_views_view(&$vars) {
   /** View */
   $view = $vars['view'];  
   
-  if ($view->name == 'collection_books') {
+  if ($view->name == 'books') {
     if (dlts_utilities_is_pjax()) {
       $vars['theme_hook_suggestion'] = 'views_view__pjax_collection_books';
     }
@@ -913,7 +943,7 @@ function dlts_book_preprocess_views_view(&$vars) {
 
   /** View */
   $view = $vars['view'];
-
+  
   if ($view->name == 'book_thumbnails') {
     dlts_utilities_add_script(theme_mustache_thumbnail_sequence(), array('id' => 'thumbnail-sequence', 'script_type' => 'text/x-handlebars-template', 'type' => 'inline', 'scope' => 'header', 'group' => SCRIPT_THEME));
     dlts_utilities_add_script(theme_mustache_thumbnail(), array('id' => 'thumbnail', 'script_type' => 'text/x-handlebars-template', 'type' => 'inline', 'scope' => 'header', 'group' => SCRIPT_THEME));
