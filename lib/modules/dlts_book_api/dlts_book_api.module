@@ -164,7 +164,10 @@ function dlts_book_api_menu() {
  * going to have access anyway, at the cost of an extra JOIN here.
  */
 function dlts_book_load($identifier) {
+
   $query = new EntityFieldQuery;
+  
+  $identifier = filter_xss($identifier);
   
   $result = $query
     ->entityCondition('entity_type', 'node')
@@ -175,7 +178,12 @@ function dlts_book_load($identifier) {
 
   if (!empty($result['node'])) {
     /** bjh6: wrapped array_pop() around this. See: http://stackoverflow.com/questions/4798047/array-flipcan-only-flip-string-and-integer-values-in-drupaldefaultentitycont */
-    return node_load(array_pop(array_keys($result['node'])));
+    
+    $keys = array_keys($result['node']);
+	
+    return node_load(
+      array_pop($keys)
+	);
   } else {
     /** If the query returns no result, there's no book with the given identifier. */
     return filter_xss($identifier);
