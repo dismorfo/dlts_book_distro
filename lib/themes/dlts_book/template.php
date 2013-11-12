@@ -115,9 +115,7 @@ function dlts_book_css_alter(&$css) {
   );
   
   $css = array_diff_key($css, $exclude);
-  
   }
-  
 }
 
 /**
@@ -143,13 +141,15 @@ function dlts_book_process_page(&$vars) {
     $vars['classes_array'][] = $vars['node']->type;
   }
   
-  // we need to do something about this, not sure is the right palce to have it or the best way to do this
+  // we need to do something about this, not sure is the right place to have it or the best way to do this or if we need this
   if (!dlts_utilities_is_pjax()) {
     $vars['breadcrumb'] = theme_get_setting('dlts_book_toggle_breadcrumb') ? $vars['breadcrumb'] : NULL;
-    $search = module_invoke('search', 'block_view', 'search');
-    $search['content']['search_block_form']['#attributes']['value'] = '';
-    $search['content']['search_block_form']['#attributes']['placeholder'] = t('Find in collection');
-    $vars['search'] = $search;
+	if (in_array('page', apachesolr_get_index_bundles(apachesolr_default_environment(), 'node'))) {
+      $search = module_invoke('search', 'block_view', 'search');
+      $search['content']['search_block_form']['#attributes']['value'] = '';
+      $search['content']['search_block_form']['#attributes']['placeholder'] = t('Find in collection');
+      $vars['search'] = $search;
+	}
   }
   
 }
@@ -219,24 +219,18 @@ function dlts_book_preprocess_node(&$vars) {
 
     case 'page' :
       
-      /** Use node--dlts-book-page.tpl.php for both dlts_book_page and dlts_book_stitched_page contetn types */
+      /** Use node--dlts-book-page.tpl.php for both dlts_book_page and dlts_book_stitched_page content types */
       $vars['theme_hook_suggestions'][] = 'node__dlts_page';
-      $vars['search'] = module_invoke('search', 'block_view', 'search');
+      
+	  // add search box if this page are selected as searchable in Apache Solr configuration 
+	  if (in_array('page', apachesolr_get_index_bundles(apachesolr_default_environment(), 'node'))) {
+        $vars['search'] = module_invoke('search', 'block_view', 'search');
+	  }
+      
       $vars['browse'] = array( '#markup' => l(t('Browse collection'), 'books', array('attributes' => array('class' => array('browse-collection', 'button', 'link')))) );
+      
       $vars['bobcat'] = array( '#markup' => l(t('BobCat record'), dlts_utilities_collection_bobcat_record(), array('attributes' => array('class' => array('link')))));
-      
-      /** we need to remove this from here */
-      $vars['book_index'] = array('#markup' => l(t('Collection index'), file_create_url(file_build_uri('the_masses_index.pdf')), array('attributes' => array('class' => array('link')))));
 
-      // we need this?
-      $js_data = array(
-        'book' => array(
-          'theme_path' => $absolute_theme_path,
-        ),
-      );
-
-      drupal_add_js($js_data, 'setting');      
-      
       break;
 
     case 'dlts_book' :
@@ -278,7 +272,8 @@ function dlts_book_preprocess_node(&$vars) {
       
       /** Load book */
       $book = dlts_utilities_book_page_load_book($node);
-	  
+      
+	  // just for now
 	  if (
 	    !isset($vars['field_cropped_master']) || 
 	    (isset($vars['field_cropped_master']) && empty($vars['field_cropped_master']) )
@@ -320,9 +315,6 @@ function dlts_book_preprocess_node(&$vars) {
       /** Use node--dlts-book-page.tpl.php for both dlts_book_page and dlts_book_stitched_page contetn types */
       $vars['theme_hook_suggestions'][] = (dlts_utilities_is_pjax()) ? 'node__dlts_book_pjax_page' : 'node__dlts_book_page';
       
-      /** Remove tabs from book page and stitched page. This is working? */      
-      $vars['tabs'] = theme_get_setting('dlts_book_toggle_page_tabs') ? $vars['tabs'] : NULL;      
-
       /** Add UI YUI */
       $js_yui_files_conf = array('type' => 'file', 'scope' => 'footer', 'weight' => 5);
       
@@ -350,8 +342,9 @@ function dlts_book_preprocess_node(&$vars) {
            ),
         ),
       );
-
-      dlts_book_add_search($vars, $js_data);
+	  
+	  // add search box if this dlts_book_page are selected as searchable in Apache Solr configuration 
+	  in_array('dlts_book_page', apachesolr_get_index_bundles(apachesolr_default_environment(), 'node')) ? dlts_book_add_search($vars, $js_data) : NULL;
 
       drupal_add_js($js_data, 'setting');
 
@@ -366,7 +359,7 @@ function dlts_book_preprocess_node(&$vars) {
         array(
           'title' => t('Metadata'),
           'path' => 'node/' . $node->nid,
-          'attributes' => array('data-title' => t('Metadata'), 'class' => array('button', 'metadata', 'on'), 'id' => array('button-metadata')),
+          'attributes' => array('data-title' => t('Metadata'), 'title' => t('Show/hide metadata'), 'class' => array('button', 'metadata', 'on'), 'id' => array('button-metadata')),
           'fragment' => 'metadata',
         )
       );
@@ -376,7 +369,7 @@ function dlts_book_preprocess_node(&$vars) {
         array(
           'title' => t('Fullscreen'),
           'path' => 'node/' . $node->nid,
-          'attributes' => array('data-title' => t('Fullscreen'), 'class' => array('button', 'fullscreen'), 'id' => array('button-fullscreen')),
+          'attributes' => array('data-title' => t('Fullscreen'), 'title' => t('Fullscreen'), 'class' => array('button', 'fullscreen'), 'id' => array('button-fullscreen')),
           'fragment' => 'fullscreen',
         )
       );
@@ -387,8 +380,8 @@ function dlts_book_preprocess_node(&$vars) {
       /** Zoom in and out buttons */
       $vars['control_panel'] = '
         <div id="control-zoom">
-          <div id="control-zoom-in" class="navbar-item" data-title="Zoom in"></div>
-          <div id="control-zoom-out" class="navbar-item" data-title="Zoom out"></div>
+          <div id="control-zoom-in" class="navbar-item" data-title="' . t('Zoom in') . '" title="' . t('Zoom in') . '"></div>
+          <div id="control-zoom-out" class="navbar-item" data-title="' . t('Zoom out') . '" title="' . t('Zoom out') . '"></div>
         </div>';
       
       $vars['pane_metadata_hidden'] = FALSE;
@@ -400,43 +393,31 @@ function dlts_book_preprocess_node(&$vars) {
   }
 }
 
-/*
- * Take control over DLTS Shapes theme function.
- */
-function dlts_book_dlts_shapes_ocr_coordinates_openlayers_js($variables) {
+function dlts_book_menu_local_task($variables) {
+  
+  $link = $variables['element']['#link'];
+  $link_text = $link['title'];
+  $link_class = strtolower($link_text);
 
-  $coord = array();
+  if (!empty($variables['element']['#active'])) {
+    // Add text to indicate active tab for non-visual users.
+    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
 
-  if (isset($variables['terms']) && !empty($variables['terms'])) {
-    foreach ($variables['terms'] as $term) {
-      $coord[] = explode(' ', $term['coordinates']);
+    // If the link does not contain HTML already, check_plain() it now.
+    // After we set 'html'=TRUE the link will not be sanitized by l().
+    if (empty($link['localized_options']['html'])) {
+      $link['title'] = check_plain($link['title']);
     }
+	
+    $link['localized_options']['html'] = TRUE;
+    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
   }
+
+  return '<li class="' . $link_class . (!empty($variables['element']['#active']) ? ' active' : '') . '">' . l($link_text, $link['href'], $link['localized_options']) . "</li>";
   
-  $data = array(
-    'shapes' => array(
-      'ocr' => $coord,
-    ),
-  );
-    
-  $options = array(
-    'type' => 'setting',
-    'scope' => JS_THEME,
-  );
-  
-  if (dlts_utilities_is_pjax()) {
-    dlts_utilities_add_script(json_encode($data), array('id' => 'shapes', 'script_type' => 'application/json', 'type' => 'inline', 'scope' => 'header', 'group' => SCRIPT_THEME));
-  }
-  else {
-    drupal_add_js($data, $options);
-  }
-    
-  return;
 }
 
 function dlts_book_dlts_image_hires($variables) {
-  
-  dd($variables);
   
   $file = $variables['file'];
   $module_path = drupal_get_path('module', 'dlts_image');
@@ -583,36 +564,37 @@ function dlts_book_dlts_book_pager_button($arguments) {
   
   switch ($arguments['id']) {
     case 'next-page':
-		case 'last-page':
-		    if ($pjax) {
-		      return '<span class="pjax button ' . $status . ' ' . $arguments['id'] . '">' . l( '<span>' .$arguments['text'] . '</span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'class' => array('next', 'paging', $status)), 'html' => TRUE)) . '</span>';		      
-		    }
-		    else {
-          return l( '<span>' . $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'class' => array('paging', 'next', $status)), 'html' => TRUE ));
-		    }
-      break;
+	case 'last-page':
+      if ($pjax) {
+        return '<span class="pjax button ' . $status . ' ' . $arguments['id'] . '">' . l( '<span>' .$arguments['text'] . '</span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'title' => $arguments['text'], 'class' => array('next', 'paging', $status)), 'html' => TRUE)) . '</span>';		      
+      }
+      else {
+        return l( '<span>' . $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'title' => $arguments['text'], 'class' => array('paging', 'next', $status)), 'html' => TRUE));
+      }
+    break;
 
     case 'previous-page':
     case 'first-page':
       if ($pjax) {
-        return '<span class="pjax button ' . $status . ' ' . $arguments['id'] . '">' . l( '<span>' .  $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'class' => array('previous', 'paging', $status)), 'html' => TRUE)) . '</span>';        
+        return '<span class="pjax button ' . $status . ' ' . $arguments['id'] . '">' . l( '<span>' .  $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'title' => $arguments['text'], 'class' => array('previous', 'paging', $status)), 'html' => TRUE)) . '</span>';        
       }
       else {
-        return l( '<span>' . $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'class' => array('paging', 'previous', $status)), 'html' => TRUE));
+        return l( '<span>' . $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'title' => $arguments['text'], 'class' => array('paging', 'previous', $status)), 'html' => TRUE));
       }
       break;
 
     case 'toggle-page':
       if ($pjax) {
-        return '<span class="pjax button ' . $status . ' ' . $arguments['id'] . '">' . l( '<span>' . $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'class' => array($icon, $status, 'toogle button')), 'html' => TRUE)) . '</span>';
+        return '<span class="pjax button ' . $status . ' ' . $arguments['id'] . '">' . l( '<span>' . $arguments['text'] . '<span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'title' => $arguments['text'], 'class' => array($icon, $status, 'toogle button')), 'html' => TRUE)) . '</span>';
       }
       else {
-        return '<li class="navbar-item">' . l( '<span class="test">' . $arguments['text'] . '</span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'class' => array($icon, $status, 'toogle button')), 'html' => TRUE)) . '</li>';
+        return '<li class="navbar-item">' . l( '<span class="test">' . $arguments['text'] . '</span>', $arguments['url'], array('attributes' => array('data-title' => $arguments['text'], 'title' => $arguments['text'], 'class' => array($icon, $status, 'toogle button')), 'html' => TRUE)) . '</li>';
       }
       break;
         
     default: //includes toggle button
-      return '<li class="navbar-item">' . l( '<span>' .$arguments['text'] . '<span>', $arguments['url'], $arguments) . '</li>';
+      
+      return '<li class="navbar-item">' . l('<span>' . $arguments['text'] . '<span>', $arguments['url'], $arguments) . '</li>';
       break;
   }
 
