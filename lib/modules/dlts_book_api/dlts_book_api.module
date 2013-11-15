@@ -5,16 +5,39 @@
  * http://api.drupal.org/api/drupal/modules--system--system.api.php/function/hook_custom_theme/7
  */
 function dlts_book_api_custom_theme() {
-  if ( isset( $_GET['oembed'] ) ) {
+
+  if ( isset($_GET['oembed'])) {
     return 'dlts_book_oembed';
   }
+  
+  // in case we want to see this site with other theme
   else if ( isset($_GET['ctheme']) ) {
     return filter_xss($_GET['ctheme']);
   }
 }
 
-function dlts_book_api_node_update($node) {
-  // dpm($node);
+/**
+ * Implementation of hook_views_pre_build().
+ * https://api.drupal.org/api/views/views.api.php/function/hook_views_pre_build/7
+ */
+function dlts_book_api_views_pre_build(&$view) {
+
+  // Make sure this is only for the specific view you want to modified
+  if ($view->name == 'book_thumbnails') {
+
+    // Get the x-y value.
+	$query_parameters = drupal_get_query_parameters();
+	
+	if (
+	  isset($query_parameters['pager_count']) // request requested a pager count overwrite  
+	  && // AND
+	  is_numeric($query_parameters['pager_count']) // requested pager count is a number (so we won't destroy our view)
+	) {
+      // Now lets set the pager item to what ever out count is.
+      $view->items_per_page = $query_parameters['pager_count'];	  
+	}
+  }
+
 }
 
 function dlts_book_api_permission() {
