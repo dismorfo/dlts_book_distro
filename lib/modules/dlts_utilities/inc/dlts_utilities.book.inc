@@ -106,14 +106,8 @@ function dlts_utilities_book_get_representative_image($node, $image_style = 'med
         $page_node = node_load(
           array_pop($keys)
 	    );
-
-		$service_copy = dlts_utilities_field_get_first_item('node', $page_node, 'field_service_copy');
 		
-		$service_copy['path'] = image_style_path($image_style, $service_copy['uri']);
-		
-		$service_copy['style_name'] = $image_style;
-		
-		return theme('image_style', $service_copy);
+		$field = dlts_utilities_field_get_first_item('node', $page_node, 'field_service_copy');
 
       } 
       else {
@@ -122,43 +116,40 @@ function dlts_utilities_book_get_representative_image($node, $image_style = 'med
 
     }
 	
-	return $field['value'];
+    $field['path'] = image_style_path($image_style, $field['uri']);
+		
+	$field['style_name'] = $image_style;
+		
+	return theme('image_style', $field);
+
 }
 
 /**
  * Returns book first page
  */
 function dlts_utilities_book_get_first_page($node) {
-	$field = dlts_utilities_field_get_first_item('node', $node, 'field_representative_image');
-	
-	// book does not have a representative image; assume sequence number 1 is "visible" and have a service copy image
-    if (!$field) {
+      	
+  $query = new EntityFieldQuery;
+	  
+  $result = $query
+              ->entityCondition('entity_type', 'node')
+              ->entityCondition('bundle', 'dlts_book_page')
+              ->propertyCondition('status', 1)
+              ->fieldCondition('field_is_part_of', 'value', dlts_utilities_book_get_identifier($node), '=')
+			  ->fieldCondition('field_visible', 'value', TRUE, '=')
+			  ->fieldCondition('field_sequence_number', 'value', 1, '=')
+              ->execute();
 
-      $query = new EntityFieldQuery;
-      $result = $query
-                  ->entityCondition('entity_type', 'node')
-                  ->entityCondition('bundle', 'dlts_book_page')
-                  ->propertyCondition('status', 1)
-                  ->fieldCondition('field_is_part_of', 'value', dlts_utilities_book_get_identifier($node), '=')
-				  ->fieldCondition('field_visible', 'value', TRUE, '=')
-				  ->fieldCondition('field_sequence_number', 'value', 1, '=')
-                  ->execute();
+  if (!empty($result['node'])) {
+    $keys = array_keys($result['node']);
 
-      if (!empty($result['node'])) {
-        $keys = array_keys($result['node']);
-
-        $page_node = node_load(
-          array_pop($keys)
-	    );
+    $page_node = node_load( array_pop($keys) );
 		
-		
-		return url('node/'. $page_node->nid);
-      } 
-      else {
-        return FALSE;
-      }
+    return url('node/'. $page_node->nid);
+  } 
+  else {
+    return FALSE;
+  }
 
-    }
-	
-	return $field['value'];
+  return $field['value'];
 }
