@@ -128,12 +128,9 @@ function dlts_image_admin($form, &$form_state) {
       '#options' => $js,
   );  
 
-  // Make changes to the settings before passing them off to
-  // system_settings_form_submit().
-
   $form['#submit'][] = 'dlts_image_image_service_admin_settings_submit';
 
-  return system_settings_form( $form );
+  return system_settings_form($form);
 }
 
 /**

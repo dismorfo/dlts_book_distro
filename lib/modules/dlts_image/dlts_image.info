@@ -1,12 +1,11 @@
 name = DLTS Image
-description = Image field widgets and formatters for displaying high resolution images using OpenLayers and Djatoka JPEG 2000 Image Server.
+description = Field, widgets and formatters for displaying high resolution images using OpenLayers and Djatoka JPEG 2000 Image Server.
 package = DLTS
 project = "dlts_image"
 
 dependencies[] = libraries
-dependencies[] = image
 
 configure = admin/config/media/dlts-image
 
 core = 7.x
-version = "7.2.1-dev"
+version = "7.2.2-dev"

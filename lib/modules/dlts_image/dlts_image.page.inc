@@ -29,7 +29,6 @@ function dlts_image_djatoka_ping() {
 /*
  * Validate URL. For now a hack
  */
-
 function dlts_image_resolve($fid) {
   // find if we have a valid URL.
   if ( $fid === '0' ) {
@@ -40,10 +39,9 @@ function dlts_image_resolve($fid) {
   return FALSE;
 }
 
-/*
+/**
  * Remove
  */
-
 function dlts_image_metadata($resource) {
   return dlts_image_getMetadata($resource);
 }

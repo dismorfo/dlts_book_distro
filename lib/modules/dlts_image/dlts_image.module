@@ -46,24 +46,13 @@ function dlts_image_theme($existing, $type, $theme, $path) {
     'dlts_image_hires' => array(
       'variables' => array(
         'file' => NULL,
+        'djakota_width' => 0,
+        'djakota_height' => 0,
+        'djakota_levels' => 0,
+        'djakota_dwtLevels' => 0,
+        'djakota_compositingLayerCount' => 0,
       ),
       'file' => 'dlts_image.theme.inc',
     ),
-    'dlts_image_admin_thumbnail' => array(
-      'variables' => array(
-        'item' => NULL,
-      ),
-      'file' => 'dlts_image.theme.inc',
-    ),
-    'dlts_image_thumbnail' => array(
-      'variables' => array(
-        'item' => NULL,
-      ),
-      'file' => 'dlts_image.theme.inc',
-    ),
-    'dlts_image_widget' => array(
-      'render element' => 'element',
-      'file' => 'dlts_image.theme.inc',
-    ),    
   );
 }

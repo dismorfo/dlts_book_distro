@@ -5,11 +5,6 @@
  * dlts_image module install functions
  */
  
-/*
- * Require files
- */
-module_load_include('inc', 'dlts_image', 'dlts_image.file');
-
 /**
  * Implements hook_field_schema().
  */

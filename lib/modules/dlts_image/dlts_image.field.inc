@@ -5,7 +5,7 @@
  * Implements DLTS Image widgets and formatters.
  *
  */
-
+ 
 module_load_include('inc', 'dlts_image', 'dlts_image.djatoka');
 
 function dlts_image_field_info() {
@@ -16,9 +16,11 @@ function dlts_image_field_info() {
       'settings' => array(
         'uri_scheme' => variable_get('file_default_scheme', 'public'),
         'default_image' => 0,
+        'display_field' => 0,
+        'display_default' => 0,
       ),
       'instance_settings' => array(
-        'file_extensions' => 'jp2 tif tiff jpg jpeg',
+        'file_extensions' => 'jp2 tif tiff',
         'file_directory' => '',
         'max_filesize' => '',
       ),
@@ -28,14 +30,17 @@ function dlts_image_field_info() {
   );
 }
 
-function dlts_image_field_settings_form($field, $instance) {
-  $form = image_field_settings_form($field, $instance);
-  return $form;
+/**
+ * Implements hook_field_settings_form().
+ * https://api.drupal.org/api/drupal/modules!field_ui!field_ui.api.php/function/hook_field_settings_form/7
+ */
+function dlts_image_field_settings_form($field, $instance, $has_data) {
+  return file_field_settings_form($field, $instance, $has_data);
 }
 
 /**
-* Implements hook_field_instance_settings_form().
-*/
+ * Implements hook_field_instance_settings_form().
+ */
 function dlts_image_field_instance_settings_form($field, $instance) {
 
   // Use the file field instance settings form as a basis.
@@ -44,7 +49,7 @@ function dlts_image_field_instance_settings_form($field, $instance) {
   // Remove the description option.
   unset($form['description_field']);
   
-  // Remove the file_extensions option, we only accept jp2, jpg, jpeg, tif, tiff.
+  // Remove the file_extensions option, we only accept jp2, tif, tiff.
   unset($form['file_extensions']);
   
   return $form;
@@ -54,9 +59,12 @@ function dlts_image_field_widget_form(&$form, &$form_state, $field, $instance, $
 
   // Add display_field setting to field because file_field_widget_form() assumes it is set.
   $field['settings']['display_field'] = 0;
+  
   $elements = file_field_widget_form($form, $form_state, $field, $instance, $langcode, $items, $delta, $element);
+  
   $settings = $instance['settings'];
-  $supported_extensions = array('tiff', 'tif', 'jp2', 'jpg', 'jpeg');  
+  
+  $supported_extensions = array('tiff', 'tif', 'jp2');
   
   foreach (element_children($elements) as $delta) {
     $elements[$delta]['#upload_validators']['file_validate_extensions'][0] = implode(' ', $supported_extensions);
@@ -97,27 +105,6 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
   // Add the image preview.
   if ($element['#file']) {
   
-    $variables = array(
-      'style_name' => $widget_settings['preview_image_style'],
-      'path' => $element['#file']->uri,
-    );     
-    
-    // Determine image dimensions.
-    if (isset($element['#value']['width']) && isset($element['#value']['height'])) {
-      $variables['width'] = $element['#value']['width'];
-      $variables['height'] = $element['#value']['height'];
-    }
-    else {
-      $info = image_get_info($element['#file']->uri);    
-      if (is_array($info)) {
-        $variables['width'] = $info['width'];
-        $variables['height'] = $info['height'];
-      }
-      else {
-        $variables['width'] = $variables['height'] = 0;
-      }
-    }
-
     /**
      * Determine image dimensions and metadata
      * If djakota_*  is available, the others will also be available
@@ -128,30 +115,28 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
       $variables['djakota_levels'] = $element['#value']['djakota_levels'];
       $variables['djakota_dwtLevels'] = $element['#value']['djakota_dwtLevels'];
       $variables['djakota_compositingLayerCount'] = $element['#value']['djakota_compositingLayerCount'];
-      $variables['width'] = $element['#value']['width'];
-      $variables['height'] = $element['#value']['width'];
+      $variables['width'] = $element['#value']['djakota_width'];
+      $variables['height'] = $element['#value']['djakota_height'];
     }
 
     /**
      * Call Djakota Image Server
      */ 
     else {
+    
       $djatoka = dlts_image_djatoka_request($element['#file']);
-      
+		
       if (!isset($djatoka['error'])) {
         $variables['djakota_width'] = $djatoka['width'];
         $variables['djakota_height'] = $djatoka['height'];
         $variables['djakota_levels'] = $djatoka['levels'];
         $variables['djakota_dwtLevels'] = $djatoka['dwtLevels'];
         $variables['djakota_compositingLayerCount'] = $djatoka['compositingLayerCount'];
+		$variables['width'] = $djatoka['width'];
+        $variables['height'] = $djatoka['height'];
       }
       else {
         form_set_error('dlts_image', t('Error requesting image metadata from Djakota service. @message (error code @code).', array('@message' => $djatoka['message'], '@error' => $djatoka['error'])));
-        $variables['djakota_width'] = 
-          $variables['djakota_height'] =  
-          $variables['djakota_levels'] = 
-          $variables['djakota_dwtLevels'] = 
-          $variables['djakota_compositingLayerCount'] = 0;
       }
     }
     
@@ -220,7 +205,7 @@ function dlts_image_field_widget_process($element, &$form_state, $form) {
  * Implements hook_field_widget_settings_form().
  */
 function dlts_image_field_widget_settings_form($field, $instance) {
-  return image_field_widget_settings_form($field, $instance);
+  return file_field_widget_settings_form($field, $instance);
 }
 
 /**
@@ -250,6 +235,41 @@ function dlts_image_field_formatter_view($entity_type, $entity, $field, $instanc
     }  	
   }
   return $element;
+}
+
+/**
+ * Implements hook_field_presave().
+ */
+function dlts_image_field_presave($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  file_field_presave($entity_type, $entity, $field, $instance, $langcode, $items);
+}
+
+/**
+ * Implements hook_field_insert().
+ */
+function dlts_image_field_insert($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  file_field_insert($entity_type, $entity, $field, $instance, $langcode, $items);
+}
+
+/**
+ * Implements hook_field_update().
+ */
+function dlts_image_field_update($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  file_field_update($entity_type, $entity, $field, $instance, $langcode, $items);
+}
+
+/**
+ * Implements hook_field_delete().
+ */
+function dlts_image_field_delete($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  file_field_delete($entity_type, $entity, $field, $instance, $langcode, $items);
+}
+
+/**
+ * Implements hook_field_delete_revision().
+ */
+function dlts_image_field_delete_revision($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  file_field_delete_revision($entity_type, $entity, $field, $instance, $langcode, $items);
 }
 
 function dlts_image_field_is_empty($item, $field) {
