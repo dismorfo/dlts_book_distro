@@ -42,24 +42,23 @@ projects[rubik][version] = "4.0-beta8"
 
 projects[tao][version] = "3.0-beta4"
 
-projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
-projects[token][subdir] = "contrib"
 projects[token][version] = "1.5"
 
-projects[unique_field][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
 
 ; while in dev
 projects[node_export][version] = "3.0"
-projects[node_export][subdir] = "contrib"
 
 ; While DEV
-projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.3"
 
-projects[diff][version] = "3.x"
+;projects[diff][version] = "3.x"
+
+projects[dummy_book][download][type] = "local"
+projects[dummy_book][download][source] = "lib/modules/dummy_book"
+projects[dummy_book][type] = "module"
 
 ; Profile
 
@@ -69,10 +68,9 @@ projects[books][type] = "profile"
 
 ; Modules
 
-projects[dlts_image][download][type] = "local"
-projects[dlts_image][download][source] = "lib/modules/dlts_image"
 projects[dlts_image][type] = "module"
-projects[dlts_image][version] = "7.1-dev"
+projects[dlts_image][download][type] = "git"
+projects[dlts_image][download][url] = "https://github.com/dismorfo/dlts_image.git"
 
 projects[dlts_nodeapi][download][type] = "local"
 projects[dlts_nodeapi][download][source] = "lib/modules/dlts_nodeapi"
@@ -132,7 +130,7 @@ libraries[openlayers][download][url] = "https://github.com/openlayers/openlayers
 libraries[openlayers][directory_name] = "openlayers"
 libraries[openlayers][type] = "library"
 
-libraries[openlayers][download][type] = "get"
-libraries[openlayers][download][url] = "http://softlayer-dal.dl.sourceforge.net/project/djatoka/djatoka/1.1/adore-djatoka-1.1.tar.gz"
-libraries[openlayers][directory_name] = "adore-djatoka"
-libraries[openlayers][type] = "library"
+libraries[djatoka][download][type] = "get"
+libraries[djatoka][download][url] = "http://softlayer-dal.dl.sourceforge.net/project/djatoka/djatoka/1.1/adore-djatoka-1.1.tar.gz"
+libraries[djatoka][directory_name] = "adore-djatoka"
+libraries[djatoka][type] = "library"
