@@ -36,8 +36,10 @@ body.page-books .view-books {
 }
 
 .view-book-thumbnails .views-view-grid.cols-8, .view-books .views-view-grid.cols-8, .pane-page-body {
+  
   font-family: $pager-fonts;
   width: 100%;
+  
   .center {
     text-align: center;
   }
@@ -132,37 +134,69 @@ body.page-books .view-books {
   }
 }
 
-.carousel-li-item {
-  vertical-align:top;
-
-  img {
-    width:100%;
-    min-width:70px;
-    max-width:200px;
-    @include bv-box-shadow($pane-box-shadow);
-  }
+.pane {
+  &.thumbnails {
+    display: block;
+    width: 100%;
+    background: $dark-background;
+    position: fixed;
+    bottom: 0;
+    z-index: 999999;
+    .thumbnails-container {
+      
+      #book-navbar {
+        width: 100%;
+        height: 40px;
+        background-color: $light-background;
+        
+        .item-list {
+          float: right;
+          margin-right: 1em;
+          
+          .pager-ellipsis {
+            display: none;
+            visibility: hidden;
+          }
+          
+          .pager-item {
+            display: none;
+            visibility: hidden;
+          }
+          
+          .pager-current {
+            display: none;
+            visibility: hidden;
+          }
+          
+        }
+        
+      }
+      
+      li {
+        vertical-align: top;        
+      }
+      
+      img {
+        width:100%;
+        min-width:70px;
+        max-width:150px;
+        @include bv-box-shadow($pane-box-shadow);
+      }
+      
+      .page-number {
+        bottom:32%;
+        left:0%;
+        padding:3% 6% ; 
+        margin-bottom:-68%;
+        font-weight:bold;
+        @include border-top-right-radius(10px);
+        background:rgba(0,0,0,.33);
+      }
     
-  span {
-    z-index:100;
-    font-size:1.1em;  
-    position:relative;
-    color:#eee;
-    letter-spacing:.05em;
-    @include bv-text-shadow(raised-text-shadow-dark-background);
-  }
+      .page-number:hover {
+        background:rgba(0,0,0,.5);
+      }
 
-  .page-number {
-    bottom:32%;
-    left:0%;
-    padding:3% 6% ; 
-    margin-bottom:-68%;
-    font-weight:bold;
-    @include border-top-right-radius(10px);
-    background:rgba(0,0,0,.33);
+    }
   }
-    
-  .page-number:hover {
-    background:rgba(0,0,0,.5);
-  }
-  
 }
