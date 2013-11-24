@@ -60,15 +60,13 @@ sh $DIR/../scripts/build_openlayers.sh
 
 if [ -f $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build/OpenLayers.js ]
   then
-    run_drush -r $BUILD_DIR/$BUILD_NAME vset dlts_image_openlayers_source sites/all/libraries/openlayers/build/OpenLayers.js
+    drush -r $BUILD_DIR/$BUILD_NAME vset dlts_image_openlayers_source sites/all/libraries/openlayers/build/OpenLayers.js
 fi
 
 echo Generating CSS files using compass
 run_compass compile --force $BUILD_DIR/$BUILD_NAME/sites/all/themes/dlts_book
 
-drush -r $BUILD_DIR/$BUILD_NAME cc all
-
-drush -r $BUILD_DIR/$BUILD_NAME scr $DIR/dummy_book/import_dummy_book.php
+# drush -r $BUILD_DIR/$BUILD_NAME scr $DIR/dummy_book/import_dummy_book.php
 
 cd $DIR
 
