@@ -40,11 +40,6 @@
           <timestamp>1383244184</timestamp>
           <uuid>ca361ff7-6645-4a50-a416-ed8ba6a5eee1</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>5684</djakota_width>
-          <djakota_height>4226</djakota_height>
-          <djakota_levels>6</djakota_levels>
-          <djakota_dwtLevels>6</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>5684</width>
           <height>4226</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/fighting.tif</node_export_file_path>

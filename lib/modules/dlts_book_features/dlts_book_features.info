@@ -56,9 +56,8 @@ dependencies[] = update
 dependencies[] = views
 dependencies[] = views_json
 dependencies[] = views_ui
-
+dependencies[] = uuid
 dependencies[] = node_export
-dependencies[] = dummy_book 
 
 features[apachesolr_environment][] = solr
 features[apachesolr_search_page][] = books

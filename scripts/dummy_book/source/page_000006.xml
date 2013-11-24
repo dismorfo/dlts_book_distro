@@ -40,11 +40,6 @@
           <timestamp>1383244089</timestamp>
           <uuid>22056e15-1df0-4b98-a3e4-78e53c1def09</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>1142</djakota_width>
-          <djakota_height>698</djakota_height>
-          <djakota_levels>4</djakota_levels>
-          <djakota_dwtLevels>4</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>1142</width>
           <height>698</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/savage.tif</node_export_file_path>        </n0>

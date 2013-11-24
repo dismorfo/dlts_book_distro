@@ -4,7 +4,7 @@ api = 2
 
 ; Modules
 
-projects[drupal][version] = "7.23"
+projects[drupal][version] = "7.24"
 
 projects[views_bulk_operations][version] = "3.1"
 
@@ -46,77 +46,71 @@ projects[token][version] = "1.5"
 
 projects[unique_field][version] = "1.0-rc1"
 
+projects[uuid][version] = "1.0-alpha5"
+
 projects[node_export][version] = "3.0"
 
 projects[devel][version] = "1.3"
 
 projects[diff][version] = "3.2"
 
-projects[dlts_books][download][type] = "local"
-projects[dlts_books][download][source] = "lib/modules/dlts_book_features"
-projects[dlts_books][type] = "module"
-
-projects[dlts_book_pager][download][type] = "local"
-projects[dlts_book_pager][download][source] = "lib/modules/dlts_book_pager"
+projects[dlts_book_pager][download][type] = "get"
+projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_pager-7.x-dev.zip"
 projects[dlts_book_pager][type] = "module"
 
-projects[dlts_book_api][download][type] = "local"
-projects[dlts_book_api][download][source] = "lib/modules/dlts_book_api"
+projects[dlts_book_api][download][type] = "get"
+projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.0-dev.zip"
 projects[dlts_book_api][type] = "module"
 
-projects[dlts_book_display][download][type] = "local"
-projects[dlts_book_display][download][source] = "lib/modules/dlts_book_display"
+projects[dlts_book_display][download][type] = "get"
+projects[dlts_book_display][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_display.zip"
 projects[dlts_book_display][type] = "module"
 
-projects[dlts_dmd_multiplier][download][type] = "local"
-projects[dlts_dmd_multiplier][download][source] = "lib/modules/dlts_dmd_multiplier"
+projects[dlts_dmd_multiplier][download][type] = "get"
+projects[dlts_dmd_multiplier][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_dmd_multiplier.zip"
 projects[dlts_dmd_multiplier][type] = "module"
 
-projects[dummy_book][download][type] = "local"
-projects[dummy_book][download][source] = "lib/modules/dummy_book"
-projects[dummy_book][type] = "module"
+projects[dlts_nodeapi][download][type] = "get"
+projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_nodeapi-7.x-dev.zip"
+projects[dlts_nodeapi][type] = "module"
+
+projects[dlts_shapes][download][type] = "get"
+projects[dlts_shapes][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_shapes.zip"
+projects[dlts_shapes][type] = "module"
+
+projects[dlts_site_metadata][download][type] = "get"
+projects[dlts_site_metadata][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_site_metadata.zip"
+projects[dlts_site_metadata][type] = "module"
+
+projects[dlts_solr][download][type] = "get"
+projects[dlts_solr][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_solr.zip"
+projects[dlts_solr][type] = "module"
+
+projects[dlts_utilities][download][type] = "get"
+projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_utilities.zip"
+projects[dlts_utilities][type] = "module"
 
 projects[dlts_image][type] = "module"
 projects[dlts_image][download][type] = "git"
 projects[dlts_image][download][url] = "https://github.com/dismorfo/dlts_image.git"
 
-;projects[dlts_nodeapi][download][type] = "svn"
-;projects[dlts_nodeapi][download][url] = "http://v1.home.nyu.edu/svn/dlib/drupal_modules/7/dlts_nodeapi"
-;projects[dlts_nodeapi][download][username] = "aof1"
-;projects[dlts_nodeapi][download][interactive] = "true"
+projects[dlts_book_features][download][type] = "local"
+projects[dlts_book_features][download][source] = "lib/modules/dlts_book_features"
+projects[dlts_book_features][type] = "module"
 
-;projects[dlts_shapes][download][type] = "svn"
-;projects[dlts_shapes][download][url] = "http://v1.home.nyu.edu/svn/dlib/drupal_modules/7/dlts_shapes"
-;projects[dlts_shapes][download][username] = "aof1"
-;projects[dlts_shapes][download][interactive] = "true"
-
-;projects[dlts_site_metadata][type] = "module"
-;projects[dlts_site_metadata][download][type] = "svn"
-;projects[dlts_site_metadata][download][url] = "http://v1.home.nyu.edu/svn/dlib/drupal_modules/7/dlts_site_metadata"
-;projects[dlts_site_metadata][download][username] = "aof1"
-;projects[dlts_site_metadata][download][interactive] = "true"
-
-;projects[dlts_solr][type] = "module"
-;projects[dlts_solr][download][type] = "svn"
-;projects[dlts_solr][download][url] = "http://v1.home.nyu.edu/svn/dlib/drupal_modules/7/dlts_solr"
-;projects[dlts_solr][download][username] = "aof1"
-;projects[dlts_solr][download][interactive] = "true"
-
-;projects[dlts_utilities][type] = "module"
-;projects[dlts_utilities][download][type] = "svn"
-;projects[dlts_utilities][download][url] = "http://v1.home.nyu.edu/svn/dlib/drupal_modules/7/dlts_utilities"
-;projects[dlts_utilities][download][username] = "aof1"
-;projects[dlts_utilities][download][interactive] = "true"
+projects[dummy_book][download][type] = "local"
+projects[dummy_book][download][source] = "lib/modules/dummy_book"
+projects[dummy_book][type] = "module"
 
 ; Themes
-
-projects[dlts_book][type] = "theme"
-projects[dlts_book][download][type] = "git"
-projects[dlts_book][download][url] = "https://github.com/dismorfo/dlts_book.git"
 
 projects[rubik][version] = "4.0-beta9"
 
 projects[tao][version] = "3.0-beta4"
+
+projects[dlts_book][download][type] = "git"
+projects[dlts_book][download][url] = "https://github.com/dismorfo/dlts_book.git"
+projects[dlts_book][type] = "theme"
 
 ; Profile
 

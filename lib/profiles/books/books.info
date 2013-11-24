@@ -4,7 +4,4 @@ core = 7.x
 
 dependencies[] = dlts_book_features
 
-; while	
-dependencies[] = dummy_book
-
 files[] = books.profile

@@ -40,11 +40,6 @@
           <timestamp>1383244139</timestamp>
           <uuid>8cb9a3a9-5bd5-471a-a2b6-b436668b9927</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>1296</djakota_width>
-          <djakota_height>986</djakota_height>
-          <djakota_levels>4</djakota_levels>
-          <djakota_dwtLevels>4</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>1296</width>
           <height>986</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/lady-shallot.tif</node_export_file_path>        </n0>

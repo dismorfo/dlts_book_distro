@@ -40,11 +40,6 @@
           <timestamp>1383244049</timestamp>
           <uuid>301323ee-9201-4751-a735-ecd995ee398b</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>3133</djakota_width>
-          <djakota_height>2480</djakota_height>
-          <djakota_levels>6</djakota_levels>
-          <djakota_dwtLevels>6</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>3133</width>
           <height>2480</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/peuple.tif</node_export_file_path>        </n0>

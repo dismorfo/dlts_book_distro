@@ -40,11 +40,6 @@
           <timestamp>1383244067</timestamp>
           <uuid>d9807598-0256-4fa7-8f33-3fee4a4392b7</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>2024</djakota_width>
-          <djakota_height>2107</djakota_height>
-          <djakota_levels>5</djakota_levels>
-          <djakota_dwtLevels>5</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>2024</width>
           <height>2107</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/girodet.tif</node_export_file_path>        </n0>

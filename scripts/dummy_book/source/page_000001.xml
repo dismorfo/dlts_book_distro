@@ -40,11 +40,6 @@
           <timestamp>1383325345</timestamp>
           <uuid>7c055ec4-9d68-4ca5-b888-ed2b6c608cb0</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>2327</djakota_width>
-          <djakota_height>2980</djakota_height>
-          <djakota_levels>5</djakota_levels>
-          <djakota_dwtLevels>5</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>2327</width>
           <height>2980</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/caspar.tif</node_export_file_path>

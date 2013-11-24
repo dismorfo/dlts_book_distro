@@ -40,11 +40,6 @@
           <timestamp>1383244009</timestamp>
           <uuid>7c5de2cd-5b89-4f2b-a4b7-b4fc3d10a950</uuid>
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
-          <djakota_width>1253</djakota_width>
-          <djakota_height>700</djakota_height>
-          <djakota_levels>4</djakota_levels>
-          <djakota_dwtLevels>4</djakota_dwtLevels>
-          <djakota_compositingLayerCount>1</djakota_compositingLayerCount>
           <width>1253</width>
           <height>700</height>
           <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/jerusalem.tif</node_export_file_path>        </n0>
