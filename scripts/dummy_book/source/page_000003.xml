@@ -30,7 +30,7 @@
     <field_cropped_master>
       <und _numeric_keys="1">
         <n0>
-          <fid type="NULL"></fid>
+          <fid></fid>
           <uid>1</uid>
           <filename>la-mort.tif</filename>
           <uri>public://la-mort.tif</uri>
@@ -42,7 +42,7 @@
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
           <width>3873</width>
           <height>3045</height>
-          <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/la-mort.tif</node_export_file_path>        </n0>
+          <node_export_file_path>public://la-mort.tif</node_export_file_path>        </n0>
       </und>
     </field_cropped_master>
     <field_hand_side>
@@ -88,7 +88,7 @@
     <field_service_copy>
       <und _numeric_keys="1">
         <n0>
-          <fid type="NULL"></fid>
+          <fid></fid>
           <uid>1</uid>
           <filename>la-mort.jpg</filename>
           <uri>public://la-mort.jpg</uri>
@@ -102,7 +102,7 @@
           <title></title>
           <width>3873</width>
           <height>3045</height>
-          <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/la-mort.jpg</node_export_file_path>        </n0>
+          <node_export_file_path>public://la-mort.jpg</node_export_file_path>        </n0>
       </und>
     </field_service_copy>
     <field_visible>

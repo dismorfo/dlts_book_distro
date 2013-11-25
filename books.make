@@ -98,10 +98,6 @@ projects[dlts_book_features][download][type] = "local"
 projects[dlts_book_features][download][source] = "lib/modules/dlts_book_features"
 projects[dlts_book_features][type] = "module"
 
-projects[dummy_book][download][type] = "local"
-projects[dummy_book][download][source] = "lib/modules/dummy_book"
-projects[dummy_book][type] = "module"
-
 ; Themes
 
 projects[rubik][version] = "4.0-beta9"

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Dummy book feature.
- */
-
-include_once 'dummy_book.features.inc';

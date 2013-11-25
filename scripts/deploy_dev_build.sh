@@ -50,7 +50,7 @@ cd $BUILD_DIR/$BUILD_NAME
 drush site-install $DRUPAL_INSTALL_PROFILE_NAME --site-name=$DRUPAL_SITE_NAME --account-name=$DRUPAL_ACCOUNT_NAME --account-mail=$DRUPAL_ACCOUNT_MAIL --site-mail=$DRUPAL_SITE_MAIL --db-url=$DRUPAL_SITE_DB_TYPE://$DRUPAL_SITE_DB_USER:$DRUPAL_SITE_DB_PASS@$DRUPAL_SITE_DB_ADDRESS/$DRUPAL_DB_NAME
 
 # while in DEV let it be 777
-chmod -R 2777 $BUILD_DIR/$BUILD_NAME/sites/default/files 
+chmod -R 2777 $BUILD_DIR/$BUILD_NAME/sites/default/files
 
 # Set imagemagick convert path
 drush -r $BUILD_DIR/$BUILD_NAME vset imagemagick_convert `which convert`
@@ -66,7 +66,7 @@ fi
 echo Generating CSS files using compass
 run_compass compile --force $BUILD_DIR/$BUILD_NAME/sites/all/themes/dlts_book
 
-# drush -r $BUILD_DIR/$BUILD_NAME scr $DIR/dummy_book/import_dummy_book.php
+drush -r $BUILD_DIR/$BUILD_NAME --uri=URI scr $DIR/dummy_book/import_dummy_book.php
 
 cd $DIR
 

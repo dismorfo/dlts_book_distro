@@ -30,7 +30,7 @@
     <field_cropped_master>
       <und _numeric_keys="1">
         <n0>
-          <fid type="NULL"></fid>
+          <fid></fid>
           <uid>1</uid>
           <filename>le-poeme.tif</filename>
           <uri>public://le-poeme.tif</uri>
@@ -42,7 +42,7 @@
           <rdf_mapping _numeric_keys="1"></rdf_mapping>
           <width>4438</width>
           <height>3398</height>
-          <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/le-poeme.tif</node_export_file_path>        </n0>
+          <node_export_file_path>public://le-poeme.tif</node_export_file_path>        </n0>
       </und>
     </field_cropped_master>
     <field_hand_side>
@@ -88,7 +88,7 @@
     <field_service_copy>
       <und _numeric_keys="1">
         <n0>
-          <fid type="NULL"></fid>
+          <fid></fid>
           <uid>1</uid>
           <filename>le-poeme.jpg</filename>
           <uri>public://le-poeme.jpg</uri>
@@ -102,7 +102,7 @@
           <title></title>
           <width>4438</width>
           <height>3398</height>
-          <node_export_file_path>/Users/albertoortizflores/tools/projects/dlts_book_distro/scripts/dummy_book/source/images/le-poeme.jpg</node_export_file_path>        </n0>
+          <node_export_file_path>public://le-poeme.jpg</node_export_file_path>        </n0>
       </und>
     </field_service_copy>
     <field_visible>
