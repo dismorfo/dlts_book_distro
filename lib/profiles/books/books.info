@@ -1,7 +1,0 @@
-name = Books
-description = Installation Profile for DLTS Book Sites
-core = 7.x
-
-dependencies[] = dlts_book_features
-
-files[] = books.profile
