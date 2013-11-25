@@ -5,6 +5,7 @@
 .sass-cache
 settings.php
 project.conf
+books.local.make
 builds
 lib/profiles/books/images
 lib/themes/dlts_book/css/*.css
