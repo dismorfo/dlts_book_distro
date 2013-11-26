@@ -1,6 +1,8 @@
 DLTS BOOK README
 ==============
 
+# Prepare
+
 Install drush
   
   pear channel-discover pear.drush.org 
@@ -10,6 +12,10 @@ Install drush
 You can then check if it successfully installed using the version command:	
 
   drush version
+  
+# Djatoka Jpeg 2000 Image Server
+
+Make sure Djatoka Jpeg 2000 Image Server is running in http://localhost:8080/adore-djatoka. If not provide the URL in the project.conf file.
     
 # Clone this project
 
