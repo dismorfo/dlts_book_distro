@@ -5,13 +5,13 @@ DLTS BOOK README
 
 Install drush
   
-  pear channel-discover pear.drush.org 
+	pear channel-discover pear.drush.org 
   
 	pear install drush/drush
 	
 You can then check if it successfully installed using the version command:	
 
-  drush version
+	drush version
   
 # Djatoka Jpeg 2000 Image Server
 
@@ -21,13 +21,13 @@ Make sure Djatoka Jpeg 2000 Image Server is running in http://localhost:8080/ado
 
 In your terminal type:
 
-  git clone https://github.com/dismorfo/dlts_book_distro.git
+	git clone https://github.com/dismorfo/dlts_book_distro.git
   
 
 # Create a project.conf
 
-  cd dlts_book_distro
-  cp default.project.conf project.conf
+	cd dlts_book_distro
+	cp default.project.conf project.conf
   
 Edit the values inside project.conf with your own system configuration.
 
