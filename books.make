@@ -8,7 +8,7 @@ projects[drupal][version] = "7.24"
 
 projects[views_bulk_operations][version] = "3.1"
 
-projects[apachesolr][version] = "1.5"
+projects[apachesolr][version] = "1.6"
 
 projects[ctools][version] = "1.3"
 
@@ -26,7 +26,7 @@ projects[imagemagick][version] = "1.0"
 
 projects[libraries][version] = "2.1"
 
-projects[link][version] = "1.1"
+projects[link][version] = "1.2"
 
 projects[transliteration][version] = "3.x"
 
