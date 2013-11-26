@@ -55,6 +55,8 @@ chmod -R 2777 $BUILD_DIR/$BUILD_NAME/sites/default/files
 # Set imagemagick convert path
 drush -r $BUILD_DIR/$BUILD_NAME vset imagemagick_convert `which convert`
 
+drush -r $BUILD_DIR/$BUILD_NAME --user=1 --uri=$URI vset dlts_image_djatoka_service $DJATOKA_URL
+
 # build OpenLayers library
 sh $DIR/../scripts/build_openlayers.sh
 
@@ -66,7 +68,8 @@ fi
 echo Generating CSS files using compass
 run_compass compile --force $BUILD_DIR/$BUILD_NAME/sites/all/themes/dlts_book
 
-drush -r $BUILD_DIR/$BUILD_NAME --user=1 --uri=$URI scr $DIR/dummy_book/import_dummy_book.php
+echo "You can create dummy content by running:"
+echo "drush -r $BUILD_DIR/$BUILD_NAME --user=1 --uri=$URI scr $DIR/dummy_book/import_dummy_book.php"
 
 cd $DIR
 
