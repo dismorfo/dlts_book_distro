@@ -66,7 +66,7 @@ fi
 echo Generating CSS files using compass
 run_compass compile --force $BUILD_DIR/$BUILD_NAME/sites/all/themes/dlts_book
 
-drush -r $BUILD_DIR/$BUILD_NAME --uri=$URI scr $DIR/dummy_book/import_dummy_book.php
+drush -r $BUILD_DIR/$BUILD_NAME --user=1 --uri=$URI scr $DIR/dummy_book/import_dummy_book.php
 
 cd $DIR
 

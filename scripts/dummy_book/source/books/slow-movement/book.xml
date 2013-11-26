@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node_export created="Thu, 31 Oct 2013 15:45:15 -0400">
+  <node>
+    <vid>2</vid>
+    <uid>1</uid>
+    <title>Slow movement</title>
+    <log></log>
+    <status>1</status>
+    <comment>1</comment>
+    <promote>0</promote>
+    <sticky>0</sticky>
+    <vuuid>1e9636a4-cf5f-4b05-95bb-e0b295cc7d7f</vuuid>
+    <nid>2</nid>
+    <type>dlts_book</type>
+    <language>und</language>
+    <created>1383190804</created>
+    <changed>1383194384</changed>
+    <tnid>0</tnid>
+    <translate>0</translate>
+    <uuid>058f617b-fef5-474e-a0f2-cef3b1e76b6f</uuid>
+    <revision_timestamp>1383194384</revision_timestamp>
+    <revision_uid>1</revision_uid>
+    <field_author _numeric_keys="1"></field_author>
+    <field_binding_orientation>
+      <und _numeric_keys="1">
+        <n0>
+          <value>1</value>
+        </n0>
+      </und>
+    </field_binding_orientation>
+    <field_call_number _numeric_keys="1"></field_call_number>
+    <field_contributor _numeric_keys="1"></field_contributor>
+    <field_creator _numeric_keys="1"></field_creator>
+    <field_description _numeric_keys="1"></field_description>
+    <field_dimensions _numeric_keys="1"></field_dimensions>
+    <field_editor _numeric_keys="1"></field_editor>
+    <field_handle _numeric_keys="1"></field_handle>
+    <field_identifier>
+      <und _numeric_keys="1">
+        <n0>
+          <value>slow-movement</value>
+          <format type="NULL"></format>
+          <safe_value>slow-movement</safe_value>
+        </n0>
+      </und>
+    </field_identifier>
+    <field_is_part_of_collection>
+      <und _numeric_keys="1">
+        <n0>
+          <nid>movements</nid>
+        </n0>
+      </und>
+    </field_is_part_of_collection>
+    <field_isbn _numeric_keys="1"></field_isbn>
+    <field_language _numeric_keys="1"></field_language>
+    <field_language_code _numeric_keys="1"></field_language_code>
+    <field_number _numeric_keys="1"></field_number>
+    <field_ocr_text _numeric_keys="1"></field_ocr_text>
+    <field_other_version _numeric_keys="1"></field_other_version>
+    <field_page_count>
+      <und _numeric_keys="1">
+        <n0>
+          <value>10</value>
+        </n0>
+      </und>
+    </field_page_count>
+    <field_pdf_file _numeric_keys="1"></field_pdf_file>
+    <field_publication_date>
+      <und _numeric_keys="1">
+        <n0>
+          <value>2013-10-01T00:00:00</value>
+          <value2>2013-10-01T00:00:00</value2>
+          <timezone>America/New_York</timezone>
+          <timezone_db>America/New_York</timezone_db>
+          <date_type>date</date_type>
+        </n0>
+      </und>
+    </field_publication_date>
+    <field_publisher _numeric_keys="1"></field_publisher>
+    <field_read_order>
+      <und _numeric_keys="1">
+        <n0>
+          <value>0</value>
+        </n0>
+      </und>
+    </field_read_order>
+    <field_representative_image _numeric_keys="1"></field_representative_image>
+    <field_scan_date>
+      <und _numeric_keys="1">
+        <n0>
+          <value>2013-10-30T00:00:00</value>
+          <timezone>America/New_York</timezone>
+          <timezone_db>America/New_York</timezone_db>
+          <date_type>date</date_type>
+        </n0>
+      </und>
+    </field_scan_date>
+    <field_scan_order>
+      <und _numeric_keys="1">
+        <n0>
+          <value>0</value>
+        </n0>
+      </und>
+    </field_scan_order>
+    <field_scanning_notes _numeric_keys="1"></field_scanning_notes>
+    <field_sequence_count>
+      <und _numeric_keys="1">
+        <n0>
+          <value>10</value>
+        </n0>
+      </und>
+    </field_sequence_count>
+    <field_subject _numeric_keys="1"></field_subject>
+    <field_subtitle>
+      <und _numeric_keys="1">
+        <n0>
+          <value>The Slow Movement advocates a cultural shift toward slowing down life's pace.</value>
+          <format type="NULL"></format>
+          <safe_value>The Slow Movement advocates a cultural shift toward slowing down life's pace.</safe_value>
+        </n0>
+      </und>
+    </field_subtitle>
+    <field_title>
+      <und _numeric_keys="1">
+        <n0>
+          <value>Slow Movement</value>
+          <format type="NULL"></format>
+          <safe_value>Slow Movement</safe_value>
+        </n0>
+      </und>
+    </field_title>
+    <field_volume _numeric_keys="1"></field_volume>
+    <rdf_mapping>
+      <rdftype _numeric_keys="1">
+        <n0>sioc:Item</n0>
+        <n1>foaf:Document</n1>
+      </rdftype>
+      <title>
+        <predicates _numeric_keys="1">
+          <n0>dc:title</n0>
+        </predicates>
+      </title>
+      <created>
+        <predicates _numeric_keys="1">
+          <n0>dc:date</n0>
+          <n1>dc:created</n1>
+        </predicates>
+        <datatype>xsd:dateTime</datatype>
+        <callback>date_iso8601</callback>
+      </created>
+      <changed>
+        <predicates _numeric_keys="1">
+          <n0>dc:modified</n0>
+        </predicates>
+        <datatype>xsd:dateTime</datatype>
+        <callback>date_iso8601</callback>
+      </changed>
+      <body>
+        <predicates _numeric_keys="1">
+          <n0>content:encoded</n0>
+        </predicates>
+      </body>
+      <uid>
+        <predicates _numeric_keys="1">
+          <n0>sioc:has_creator</n0>
+        </predicates>
+        <type>rel</type>
+      </uid>
+      <name>
+        <predicates _numeric_keys="1">
+          <n0>foaf:name</n0>
+        </predicates>
+      </name>
+      <comment_count>
+        <predicates _numeric_keys="1">
+          <n0>sioc:num_replies</n0>
+        </predicates>
+        <datatype>xsd:integer</datatype>
+      </comment_count>
+      <last_activity>
+        <predicates _numeric_keys="1">
+          <n0>sioc:last_activity_date</n0>
+        </predicates>
+        <datatype>xsd:dateTime</datatype>
+        <callback>date_iso8601</callback>
+      </last_activity>
+    </rdf_mapping>
+    <cid>0</cid>
+    <last_comment_timestamp>1383190804</last_comment_timestamp>
+    <last_comment_name type="NULL"></last_comment_name>
+    <last_comment_uid>1</last_comment_uid>
+    <comment_count>0</comment_count>
+    <name>aortiz</name>
+    <picture>0</picture>
+    <data>b:0;</data>
+    <path>
+      <pid>2</pid>
+      <source>node/2</source>
+      <alias>books/movement</alias>
+      <language>und</language>
+    </path>
+    <menu type="NULL"></menu>
+    <node_export_drupal_version>7</node_export_drupal_version>
+  </node>
+</node_export>

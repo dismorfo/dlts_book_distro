@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node_export created="Thu, 31 Oct 2013 15:45:15 -0400">
+  <node>
+    <vid>10</vid>
+    <uid>1</uid>
+    <title>Liberty Leading the People</title>
+    <log></log>
+    <status>1</status>
+    <comment>1</comment>
+    <promote>0</promote>
+    <sticky>0</sticky>
+    <vuuid>1ba69a1a-de23-49d5-9357-298f8956c6a3</vuuid>
+    <nid>10</nid>
+    <type>dlts_book_page</type>
+    <language>und</language>
+    <created>1383192811</created>
+    <changed>1383244049</changed>
+    <tnid>0</tnid>
+    <translate>0</translate>
+    <uuid>16debba5-d431-4015-abff-3fac3074cea6</uuid>
+    <revision_timestamp>1383244049</revision_timestamp>
+    <revision_uid>1</revision_uid>
+    <field_book>
+      <und _numeric_keys="1">
+        <n0>
+          <nid>rashtrakuta-dynasty</nid>
+        </n0>
+      </und>
+    </field_book>
+    <field_cropped_master>
+      <und _numeric_keys="1">
+        <n0>
+          <fid></fid>
+          <uid>1</uid>
+          <filename>peuple.tif</filename>
+          <uri>public://peuple.tif</uri>
+          <filemime>image/tiff</filemime>
+          <filesize>23336696</filesize>
+          <status>0</status>
+          <timestamp>1383244049</timestamp>
+          <uuid>301323ee-9201-4751-a735-ecd995ee398b</uuid>
+          <rdf_mapping _numeric_keys="1"></rdf_mapping>
+          <width>3133</width>
+          <height>2480</height>
+          <node_export_file_path>public://peuple.tif</node_export_file_path>        </n0>
+      </und>
+    </field_cropped_master>
+    <field_hand_side>
+      <und _numeric_keys="1">
+        <n0>
+          <value>1</value>
+        </n0>
+      </und>
+    </field_hand_side>
+    <field_is_part_of>
+      <und _numeric_keys="1">
+        <n0>
+          <value>rashtrakuta-dynasty</value>
+          <format type="NULL"></format>
+          <safe_value>rashtrakuta-dynasty</safe_value>
+        </n0>
+      </und>
+    </field_is_part_of>
+    <field_ocr_text _numeric_keys="1"></field_ocr_text>
+    <field_page_type>
+      <und _numeric_keys="1">
+        <n0>
+          <value>0</value>
+        </n0>
+      </und>
+    </field_page_type>
+    <field_real_page_number>
+      <und _numeric_keys="1">
+        <n0>
+          <value>8</value>
+          <format type="NULL"></format>
+          <safe_value>8</safe_value>
+        </n0>
+      </und>
+    </field_real_page_number>
+    <field_sequence_number>
+      <und _numeric_keys="1">
+        <n0>
+          <value>8</value>
+        </n0>
+      </und>
+    </field_sequence_number>
+    <field_service_copy>
+      <und _numeric_keys="1">
+        <n0>
+          <fid></fid>
+          <uid>1</uid>
+          <filename>peuple.jpg</filename>
+          <uri>public://peuple.jpg</uri>
+          <filemime>image/jpeg</filemime>
+          <filesize>1728494</filesize>
+          <status>1</status>
+          <timestamp>1383192811</timestamp>
+          <uuid>0e893665-0a12-4267-aa5c-711fcfa096a8</uuid>
+          <rdf_mapping _numeric_keys="1"></rdf_mapping>
+          <alt></alt>
+          <title></title>
+          <width>3133</width>
+          <height>2480</height>
+          <node_export_file_path>public://peuple.jpg</node_export_file_path>        </n0>
+      </und>
+    </field_service_copy>
+    <field_visible>
+      <und _numeric_keys="1">
+        <n0>
+          <value>1</value>
+        </n0>
+      </und>
+    </field_visible>
+    <rdf_mapping>
+      <rdftype _numeric_keys="1">
+        <n0>sioc:Item</n0>
+        <n1>foaf:Document</n1>
+      </rdftype>
+      <title>
+        <predicates _numeric_keys="1">
+          <n0>dc:title</n0>
+        </predicates>
+      </title>
+      <created>
+        <predicates _numeric_keys="1">
+          <n0>dc:date</n0>
+          <n1>dc:created</n1>
+        </predicates>
+        <datatype>xsd:dateTime</datatype>
+        <callback>date_iso8601</callback>
+      </created>
+      <changed>
+        <predicates _numeric_keys="1">
+          <n0>dc:modified</n0>
+        </predicates>
+        <datatype>xsd:dateTime</datatype>
+        <callback>date_iso8601</callback>
+      </changed>
+      <body>
+        <predicates _numeric_keys="1">
+          <n0>content:encoded</n0>
+        </predicates>
+      </body>
+      <uid>
+        <predicates _numeric_keys="1">
+          <n0>sioc:has_creator</n0>
+        </predicates>
+        <type>rel</type>
+      </uid>
+      <name>
+        <predicates _numeric_keys="1">
+          <n0>foaf:name</n0>
+        </predicates>
+      </name>
+      <comment_count>
+        <predicates _numeric_keys="1">
+          <n0>sioc:num_replies</n0>
+        </predicates>
+        <datatype>xsd:integer</datatype>
+      </comment_count>
+      <last_activity>
+        <predicates _numeric_keys="1">
+          <n0>sioc:last_activity_date</n0>
+        </predicates>
+        <datatype>xsd:dateTime</datatype>
+        <callback>date_iso8601</callback>
+      </last_activity>
+    </rdf_mapping>
+    <cid>0</cid>
+    <last_comment_timestamp>1383192811</last_comment_timestamp>
+    <last_comment_name type="NULL"></last_comment_name>
+    <last_comment_uid>1</last_comment_uid>
+    <comment_count>0</comment_count>
+    <prevpage></prevpage>
+    <nextpage></nextpage>
+    <togglepage></togglepage>
+    <name>aortiz</name>
+    <picture>0</picture>
+    <data>b:0;</data>
+    <path>
+      <pid>10</pid>
+      <source>node/10</source>
+      <alias>books/rashtrakuta-dynasty/8</alias>
+      <language>und</language>
+    </path>
+    <menu type="NULL"></menu>
+    <node_export_drupal_version>7</node_export_drupal_version>
+  </node>
+</node_export>
