@@ -20,11 +20,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 CURRENT_DIR=`pwd`
 
-LIBRARY="$(dirname "$DIR")"/lib
-
 . $DIR/../project.conf
-
-[ -d $LIBRARY ] || die "Library directory $LIBRARY does not exist"
 
 [ -d $BUILD_DIR ] || die "Build directory $BUILD_DIR does not exist" 
 
