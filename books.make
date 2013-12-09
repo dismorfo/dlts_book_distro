@@ -40,6 +40,8 @@ projects[views][version] = "3.7"
 
 projects[views_datasource][version] = "1.x-dev"
 
+projects[auto_nodetitle][version] = "1.0"
+
 projects[pathauto][version] = "1.2"
 
 projects[token][version] = "1.5"
@@ -91,7 +93,7 @@ projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/project
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
-projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.1.zip"
+projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.2.zip"
 projects[dlts_book_features][type] = "module"
 
 projects[dlts_image][download][type] = "git"
