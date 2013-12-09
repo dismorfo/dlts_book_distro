@@ -53,7 +53,7 @@ projects[uuid][version] = "1.0-alpha5"
 projects[node_export][version] = "3.0"
 
 projects[dlts_book_pager][download][type] = "get"
-projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_book_pager-7.x-dev.zip"
+projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_pager-7.1.zip"
 projects[dlts_book_pager][type] = "module"
 
 projects[dlts_book_api][download][type] = "get"
