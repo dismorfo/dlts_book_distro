@@ -52,16 +52,12 @@ projects[uuid][version] = "1.0-alpha5"
 
 projects[node_export][version] = "3.0"
 
-projects[devel][version] = "1.3"
-
-projects[diff][version] = "3.2"
-
 projects[dlts_book_pager][download][type] = "get"
 projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_book_pager-7.x-dev.zip"
 projects[dlts_book_pager][type] = "module"
 
 projects[dlts_book_api][download][type] = "get"
-projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_book_api-7.x-1.0-dev.zip"
+projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.1.zip"
 projects[dlts_book_api][type] = "module"
 
 projects[dlts_book_display][download][type] = "get"
@@ -76,10 +72,6 @@ projects[dlts_nodeapi][download][type] = "get"
 projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_nodeapi-7.x-dev.zip"
 projects[dlts_nodeapi][type] = "module"
 
-projects[dlts_shapes][download][type] = "get"
-projects[dlts_shapes][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_shapes.zip"
-projects[dlts_shapes][type] = "module"
-
 projects[dlts_site_metadata][download][type] = "get"
 projects[dlts_site_metadata][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_site_metadata.zip"
 projects[dlts_site_metadata][type] = "module"
@@ -93,7 +85,7 @@ projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/project
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
-projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.2.zip"
+projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.4.zip"
 projects[dlts_book_features][type] = "module"
 
 projects[dlts_image][download][type] = "git"
