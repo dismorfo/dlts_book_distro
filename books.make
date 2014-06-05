@@ -4,31 +4,37 @@ api = 2
 
 ; Modules
 
-projects[drupal][version] = "7.24"
+projects[drupal][version] = "7.28"
 
 projects[views_bulk_operations][version] = "3.1"
 
 projects[apachesolr][version] = "1.6"
 
-projects[ctools][version] = "1.3"
+projects[ctools][version] = "1.4"
 
 projects[facetapi][version] = "1.3"
 
-projects[date][version] = "2.6"
+projects[date][version] = "2.7"
 
-projects[entity][version] = "1.2"
+projects[entity][version] = "1.5"
 
 projects[features][version] = "1.0"
 
-projects[field_group][version] = "1.3"
+projects[variable][version] = "2.5"
+
+projects[i18n][version] = "1.11"
+
+projects[diff][version] = "3.2"
+
+projects[field_group][version] = "1.4"
 
 projects[imagemagick][version] = "1.0"
 
-projects[libraries][version] = "2.1"
+projects[libraries][version] = "2.2"
 
 projects[link][version] = "1.2"
 
-projects[transliteration][version] = "3.x"
+projects[transliteration][version] = "3.2"
 
 projects[references][version] = "2.1"
 
@@ -36,7 +42,7 @@ projects[services][version] = "3.x"
 
 projects[strongarm][version] = "2.0"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 
 projects[views_datasource][version] = "1.x-dev"
 
@@ -81,11 +87,11 @@ projects[dlts_solr][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sit
 projects[dlts_solr][type] = "module"
 
 projects[dlts_utilities][download][type] = "get"
-projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.1.zip"
+projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.2.zip"
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
-projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.4.zip"
+projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.5.zip"
 projects[dlts_book_features][type] = "module"
 
 projects[dlts_image][download][type] = "git"
