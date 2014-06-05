@@ -91,7 +91,7 @@ projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/project
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
-projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.5.zip"
+projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.6.zip"
 projects[dlts_book_features][type] = "module"
 
 projects[dlts_image][download][type] = "git"
