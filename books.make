@@ -38,7 +38,7 @@ projects[transliteration][version] = "3.2"
 
 projects[references][version] = "2.1"
 
-projects[services][version] = "3.x"
+projects[services][version] = "3.7"
 
 projects[strongarm][version] = "2.0"
 
