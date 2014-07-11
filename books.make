@@ -83,11 +83,11 @@ projects[dlts_site_metadata][download][url] = "http://dev-dl-pa.home.nyu.edu/pro
 projects[dlts_site_metadata][type] = "module"
 
 projects[dlts_solr][download][type] = "get"
-projects[dlts_solr][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_solr-7.x-1.1.zip"
+projects[dlts_solr][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_solr-7.x-1.2.zip"
 projects[dlts_solr][type] = "module"
 
 projects[dlts_utilities][download][type] = "get"
-projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.4.zip"
+projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.5.zip"
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
