@@ -45,6 +45,8 @@ drush -v make --prepare-install $1 $BUILD_DIR/$BUILD_NAME
 
 # i need to add a test to check if we have all we need
 
+sh $DIR/link_build.sh
+
 echo Install new site
 
 cd $BUILD_DIR/$BUILD_NAME
@@ -55,7 +57,7 @@ drush -v site-install $DRUPAL_INSTALL_PROFILE_NAME --site-name=$DRUPAL_SITE_NAME
 chmod -R 2777 $BUILD_DIR/$BUILD_NAME/sites/default/files
 
 # Set imagemagick convert path
-drush -v -r $BUILD_DIR/$BUILD_NAME vset imagemagick_convert `which convert`
+# drush -v -r $BUILD_DIR/$BUILD_NAME vset imagemagick_convert `which convert`
 
 drush -v -r $BUILD_DIR/$BUILD_NAME --user=1 --uri=$URI vset dlts_image_djatoka_service $DJATOKA_URL
 
@@ -67,14 +69,12 @@ if [ -f $BUILD_DIR/$BUILD_NAME/sites/all/libraries/openlayers/build/OpenLayers.j
     drush -v -r $BUILD_DIR/$BUILD_NAME vset dlts_image_openlayers_source sites/all/libraries/openlayers/build/OpenLayers.js
 fi
 
-echo Generating CSS files using compass
+echo Compiling SASS into CSS
+
 run_compass compile --force $BUILD_DIR/$BUILD_NAME/sites/all/themes/dlts_book
 
-echo "You can create dummy content by running:"
-echo "drush -v -r $BUILD_DIR/$BUILD_NAME --user=1 --uri=$URI scr $DIR/dummy_book/import_dummy_book.php"
+sh $DIR/cleanup.sh
 
 cd $DIR
 
 echo "Build path: " $BUILD_DIR/$BUILD_NAME
-
-echo Ok
