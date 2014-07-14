@@ -12,6 +12,6 @@ lib/modules/*
 lib/themes/*
 lib/profiles/*
 
-lib/modules/!README
-lib/themes/!README
-lib/profiles/!README
+!lib/modules/README
+!lib/themes/README
+!lib/profiles/README
