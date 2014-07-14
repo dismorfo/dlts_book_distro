@@ -12,7 +12,7 @@ projects[apachesolr][version] = "1.6"
 
 projects[ctools][version] = "1.4"
 
-projects[facetapi][version] = "1.3"
+projects[facetapi][version] = "1.4"
 
 projects[date][version] = "2.7"
 
@@ -91,7 +91,7 @@ projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/project
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
-projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.6.zip"
+projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.7.zip"
 projects[dlts_book_features][type] = "module"
 
 projects[dlts_image][download][type] = "git"
