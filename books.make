@@ -63,7 +63,7 @@ projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projec
 projects[dlts_book_pager][type] = "module"
 
 projects[dlts_book_api][download][type] = "get"
-projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.1.zip"
+projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.2.zip"
 projects[dlts_book_api][type] = "module"
 
 projects[dlts_book_display][download][type] = "get"
@@ -87,7 +87,7 @@ projects[dlts_solr][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sit
 projects[dlts_solr][type] = "module"
 
 projects[dlts_utilities][download][type] = "get"
-projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.5.zip"
+projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.6.zip"
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_book_features][download][type] = "get"
