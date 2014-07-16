@@ -63,7 +63,7 @@ projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projec
 projects[dlts_book_pager][type] = "module"
 
 projects[dlts_book_api][download][type] = "get"
-projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.2.zip"
+projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.4.zip"
 projects[dlts_book_api][type] = "module"
 
 projects[dlts_book_display][download][type] = "get"
