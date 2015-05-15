@@ -12,7 +12,7 @@ run_compass() {
   if hash compass 2>/dev/null; then
     compass "$@"
   else
-    die "Unable to find compass. Make sure is installed."
+    echo "Unable to find compass. Make sure is installed."
   fi
 }
 
@@ -41,7 +41,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 echo Preparing new site using $1
 
-drush -v make --prepare-install --user=1 --uri=$URI $1 $BUILD_DIR/$BUILD_NAME 
+drush -d -v -y make --prepare-install --user=1 --uri=$URI $1 $BUILD_DIR/$BUILD_NAME 
 
 # i need to add a test to check if we have all we need
 
@@ -51,7 +51,7 @@ echo Install new site
 
 cd $BUILD_DIR/$BUILD_NAME
 
-drush -v --user=1 --uri=$URI site-install $DRUPAL_INSTALL_PROFILE_NAME --site-name=$DRUPAL_SITE_NAME --account-name=$DRUPAL_ACCOUNT_NAME --account-pass=$DRUPAL_ACCOUNT_PASS --account-mail=$DRUPAL_ACCOUNT_MAIL --site-mail=$DRUPAL_SITE_MAIL --db-url=$DRUPAL_SITE_DB_TYPE://$DRUPAL_SITE_DB_USER:$DRUPAL_SITE_DB_PASS@$DRUPAL_SITE_DB_ADDRESS/$DRUPAL_DB_NAME
+drush -d -v -y --user=1 --uri=$URI site-install $DRUPAL_INSTALL_PROFILE_NAME --site-name=$DRUPAL_SITE_NAME --account-name=$DRUPAL_ACCOUNT_NAME --account-pass=$DRUPAL_ACCOUNT_PASS --account-mail=$DRUPAL_ACCOUNT_MAIL --site-mail=$DRUPAL_SITE_MAIL --db-url=$DRUPAL_SITE_DB_TYPE://$DRUPAL_SITE_DB_USER:$DRUPAL_SITE_DB_PASS@$DRUPAL_SITE_DB_ADDRESS/$DRUPAL_DB_NAME
 
 # while in DEV let it be 777
 chmod -R 2777 $BUILD_DIR/$BUILD_NAME/sites/default/files

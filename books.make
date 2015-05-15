@@ -4,52 +4,34 @@ api = 2
 
 ; Modules
 
-projects[drupal][version] = "7.29"
+projects[drupal][version] = "7.37"
 
-projects[ctools][version] = "1.4"
-
-projects[date][version] = "2.7"
-
-projects[entity][version] = "1.5"
-
+projects[ctools][version] = "1.7"
+projects[date][version] = "2.8"
+projects[entity][version] = "1.6"
 projects[features][version] = "1.0"
-
 projects[variable][version] = "2.5"
-
-projects[i18n][version] = "1.11"
-
+projects[i18n][version] = "1.13"
 projects[diff][version] = "3.2"
-
 projects[field_group][version] = "1.4"
-
 projects[libraries][version] = "2.2"
-
-projects[link][version] = "1.2"
-
+projects[link][version] = "1.3"
 projects[transliteration][version] = "3.2"
-
 projects[references][version] = "2.1"
-
-projects[services][version] = "3.7"
-
+projects[services][version] = "3.12"
 projects[strongarm][version] = "2.0"
-
-projects[views][version] = "3.8"
-
+projects[views][version] = "3.11"
 projects[pathauto][version] = "1.2"
-
-projects[token][version] = "1.5"
-
+projects[token][version] = "1.6"
 projects[unique_field][version] = "1.0-rc1"
-
-projects[uuid][version] = "1.0-alpha5"
+projects[uuid][version] = "1.0-alpha6"
 
 projects[dlts_book_pager][download][type] = "get"
 projects[dlts_book_pager][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_pager-7.1.zip"
 projects[dlts_book_pager][type] = "module"
 
-projects[dlts_book_api][download][type] = "get"
-projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.6.zip"
+projects[dlts_book_api][download][type] = "git"
+projects[dlts_book_api][download][url] = "https://github.com/dismorfo/dlts_book_api.git"
 projects[dlts_book_api][type] = "module"
 
 projects[dlts_book_display][download][type] = "get"
@@ -61,12 +43,13 @@ projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/
 projects[dlts_nodeapi][type] = "module"
 
 projects[dlts_utilities][download][type] = "get"
-projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.6.zip"
+projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_utilities-7.x-1.9.zip"
 projects[dlts_utilities][type] = "module"
 
-projects[dlts_book_features][download][type] = "get"
-projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.9.zip"
+projects[dlts_book_features][download][type] = "git"
+projects[dlts_book_features][download][url] = "https://github.com/NYULibraries/dlts_book_features.git"
 projects[dlts_book_features][type] = "module"
+
 
 projects[dlts_image][download][type] = "git"
 projects[dlts_image][download][url] = "https://github.com/dismorfo/dlts_image.git"
@@ -99,3 +82,12 @@ libraries[openlayers][download][type] = "git"
 libraries[openlayers][download][url] = "https://github.com/openlayers/openlayers.git"
 libraries[openlayers][directory_name] = "openlayers"
 libraries[openlayers][type] = "library"
+
+
+; projects[dlts_book_api][download][type] = "get"
+; projects[dlts_book_api][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_api-7.x-1.6.zip"
+; projects[dlts_book_api][type] = "module"
+
+; projects[dlts_book_features][download][type] = "get"
+; projects[dlts_book_features][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_book_features-7.x-1.9.zip"
+; projects[dlts_book_features][type] = "module"

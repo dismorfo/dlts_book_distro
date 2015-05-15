@@ -30,7 +30,7 @@ echo Linking build name $BUILD_NAME
 
 site_dirs=(modules themes)
 
-# find modules and themes and symlink them to the repo code
+# find modules/themes and symlink them to the repo code
 for site_dir in "${site_dirs[@]}"
   do
     for dir in $LIBRARY/${site_dir}/*
