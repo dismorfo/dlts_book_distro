@@ -1,4 +1,4 @@
-DLTS BOOK README
+Generic DLTS Book site
 ==============
 
 # Djatoka Jpeg 2000 Image Server
@@ -20,10 +20,8 @@ In your terminal type:
   
 Edit the values inside project.conf with your own system configuration.
 
-# Building the Drupal Distribution
+# Build the project
 
 Build the drupal distribution by running the deploy dev script, e.g.
 
 	sh bin/build.sh -m books.make -c configs/project.conf
-
-
