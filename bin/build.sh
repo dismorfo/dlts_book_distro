@@ -200,6 +200,10 @@ if [ ! $SIMULATE ] ;
     tell ${LINENO} 7 "${STEP_7}" ;
 fi ;
 
+
+# build OpenLayers library
+sh ${DIR}/build_openlayers.sh -b ${BUILD_DIR}/${BUILD_NAME}
+
 if [ ! $SIMULATE ] ; 
   then
     # do a quick status check
