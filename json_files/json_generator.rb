@@ -13,6 +13,7 @@ assoc={}
 # parse values
 file.each_line.with_index do | line,index |
   assoc_member = {}
+  assoc={}
   line.chomp.split(" ").each.with_index do |v,iter|
     if (iter==0) 
        assoc_member["cm_name"]= v
