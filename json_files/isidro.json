@@ -1,0 +1,85 @@
+
+{
+    "isidro":
+    [
+        {
+            "cm":
+            {
+                "cm_name":"columbia_aco000020_afr01_d.jp2",
+                "width":"2857",
+                "height":"4109",
+                "levels":"5",
+                "dwtLevels":"5",
+                "compositingLayerCount":"1",
+                "filename":"public://columbia_aco000020_afr01_d.jp2",
+                "timestamp": "00000000"
+            },
+            "ri":"public://columbia_aco000020_afr01_s.jpg",
+            "id":"columbia_aco000020_afr01"
+        },
+        {
+            "cm":
+            {
+                "cm_name":"columbia_aco000020_afr02_d.jp2",
+                "width":"2819",
+                "height":"4073",
+                "levels":"5",
+                "dwtLevels":"5",
+                "compositingLayerCount":"1",
+                "filename":"public://columbia_aco000020_afr02_d.jp2"
+                ,
+                "timestamp": "00000000"
+            },
+            "ri":"public://columbia_aco000020_afr02_s.jpg",
+            "id":"columbia_aco000020_afr02"
+        },
+        {
+            "cm":
+            {
+                "cm_name":"columbia_aco000020_afr03_d.jp2",
+                "width":"2776",
+                "height":"3997",
+                "levels":"5",
+                "dwtLevels":"5",
+                "compositingLayerCount":"1",
+                "filename":"public://columbia_aco000020_afr03_d.jp2",
+                "timestamp": "00000000"
+
+            },
+            "ri":"public://columbia_aco000020_afr03_s.jpg",
+            "id":"columbia_aco000020_afr03"
+        },
+        {
+            "cm":
+            {
+                "cm_name":"columbia_aco000020_afr04_d.jp2",
+                "width":"2627",
+                "height":"3993",
+                "levels":"5",
+                "dwtLevels":"5",
+                "compositingLayerCount":"1",
+                "filename":"public://columbia_aco000020_afr04_d.jp2",
+                "timestamp": "00000000"
+            },
+            "ri":"public://columbia_aco000020_afr04_s.jpg",
+            "id":"columbia_aco000020_afr04"
+        },
+        {
+            "cm":
+            {
+                "cm_name":"columbia_aco000020_afr05_d.jp2",
+                "width":"2606",
+                "height":"4001",
+                "levels":"5",
+                "dwtLevels":"5",
+                "compositingLayerCount":"1",
+                "filename":"public://columbia_aco000020_afr05_d.jp2"
+                ,
+                "timestamp": "00000000"
+            },
+            "ri":"public://columbia_aco000020_afr05_s.jpg",
+            "id":"columbia_aco000020_afr05"
+        }
+
+    ]
+}

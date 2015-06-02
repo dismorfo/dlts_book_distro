@@ -3,8 +3,7 @@ Generic DLTS Book site
 
 ### Clone this project
 
-	git clone https://github.com/dismorfo/dlts_book_distro.git
-  
+	git clone https://github.com/dismorfo/dlts_book_distro.git 
 
 ### Create a project.conf
 
@@ -13,13 +12,20 @@ Generic DLTS Book site
   
 Edit the values inside project.conf with your own system configuration.
 
-### Djatoka Jpeg 2000 Image Server
-
-Make sure Djatoka Jpeg 2000 Image Server is running in http://localhost:8080/adore-djatoka. 
-If not provide the URL in the project.conf file.
-    
 ### Build the project
 
 Build the drupal distribution by running the deploy dev script, e.g.
 
 	sh bin/build.sh -m books.make -c configs/project.conf
+	
+### Project requirements
+
+### Djatoka Jpeg 2000 Image Server
+
+Make sure Djatoka Jpeg 2000 Image Server is running in http://localhost:8080/adore-djatoka. 
+If not provide the URL in the project.conf file.
+    
+### Apache Solr
+
+Make sureApache Solr is running in http://localhost:8080/adore-djatoka. 
+If not provide the URL in the project.conf file.

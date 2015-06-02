@@ -5,9 +5,10 @@ die () {
   exit 1;
 }
 
-while getopts ":hb" opt; do
+while getopts ":b:h" opt; do
   case $opt in
     b)
+      echo $OPTARG
       [ -d $OPTARG ] || die "Build direcotry does not exist." 
       BUILD=$OPTARG
       ;;
