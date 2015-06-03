@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'json'
 
-file = File.open("columbia_aco000020.txt", "r")
+file = File.open("columbia_aco000020_2up.txt", "r")
 #file = File.open("sample.txt", "r")
 
 # get header
@@ -20,15 +20,15 @@ file.each_line.with_index do | line,index |
     if iter>0 
       assoc_member[keys[iter]] = v
     else
-      filename= v[0..-7]
-      dirname= v[0..-13]
+      filename= v[0..-5]
+      dirname= v[0..-19]
     end
   end
   filename_jpg = "public://"+dirname+"/"+filename+"_s"+".jpg"
   f_schema= "public://"+dirname+"/"+filename+"_d.jp2" 
   assoc_member[keys[0]]= f_schema
   assoc["cm"]=assoc_member
-  assoc["ri"]= filename_jpg
+  assoc["ri"]= {"uri"=>filename_jpg}
   assoc["id"] = filename
   agreg[index] = assoc
 end
